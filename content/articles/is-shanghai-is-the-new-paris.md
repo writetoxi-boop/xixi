@@ -6,6 +6,7 @@ author: PS
 read_time: 4 MIN
 excerpt: Margiela leaves Paris for Shanghai — and folds couture into
   ready-to-wear for the first time.
+image: /assets/uploads/margiela-po-f26-010.webp
 featured: true
 ---
 Maison Margiela just staged its first show outside Paris — in a Shanghai shipping dock. Not a quiet move. The room pulled in a sharper international crowd than recent seasons, with buyers and editors flying back in.
