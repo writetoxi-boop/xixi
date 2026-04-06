@@ -1,6 +1,6 @@
 ---
-title: BTS Wore Korean Armour to Their Comeback — and Fashion Will Never Be the Same
-date: 2026-04-06T12:33:40.506Z
+title: BTS Wore Korean Armour to Their Comeback
+date: 2026-04-06T12:45:42.686Z
 category: fashion
 author: PS
 read_time: 6 MIN
