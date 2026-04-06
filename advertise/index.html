@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner With XIXI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+:root{--paper:#F7F3EE;--paper2:#EDE8E1;--ink:#1A1714;--ink2:#3D3833;--ink3:#6B6560;--ink4:#9E9992;--seal:#C8412A;--rule:rgba(26,23,20,0.12);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--paper);color:var(--ink);font-family:'Cormorant',serif;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");background-size:200px 200px;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(247,243,238,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 48px;height:68px;}
+.nav-left{display:flex;gap:36px;}
+.nav-left a,.nav-right a{font-family:'Cormorant SC',serif;font-size:0.72rem;letter-spacing:0.18em;color:var(--ink3);text-decoration:none;transition:color 0.2s;}
+.nav-left a:hover,.nav-right a:hover,.nav-left a.active{color:var(--seal);}
+.nav-logo{text-align:center;font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:900;letter-spacing:0.25em;color:var(--ink);text-decoration:none;line-height:1;}
+.nav-logo .sd{color:var(--seal);font-size:0.4em;vertical-align:super;margin-left:2px;}
+.nav-right{display:flex;gap:36px;justify-content:flex-end;}
+.nav-sub{font-family:'Cormorant SC',serif!important;font-size:0.68rem!important;letter-spacing:0.2em!important;color:var(--paper)!important;background:var(--ink);padding:9px 22px;transition:background 0.2s!important;}
+.nav-sub:hover{background:var(--seal)!important;}
+
+/* HERO */
+.p-hero{margin-top:68px;padding:96px 48px 72px;border-bottom:1px solid var(--rule);}
+.kicker{font-family:'Cormorant SC',serif;font-size:0.7rem;letter-spacing:0.28em;color:var(--ink4);display:flex;align-items:center;gap:14px;margin-bottom:44px;}
+.kicker::before{content:'';width:24px;height:1px;background:var(--seal);display:block;}
+.p-hero h1{font-family:'Playfair Display',serif;font-size:clamp(4rem,8vw,10rem);font-weight:900;line-height:0.9;letter-spacing:-0.02em;margin-bottom:48px;}
+.p-hero h1 em{font-style:italic;color:var(--seal);}
+.stats-row{display:grid;grid-template-columns:repeat(3,auto) 1fr;gap:60px;align-items:end;}
+.stat-block{border-top:1px solid var(--rule);padding-top:18px;}
+.s-big{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--ink);display:block;line-height:1;}
+.s-lbl{font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--ink4);}
+.hero-copy{font-size:0.98rem;color:var(--ink3);font-weight:300;line-height:1.75;max-width:380px;align-self:end;}
+
+/* AUDIENCE */
+.aud-section{padding:80px 48px;border-bottom:1px solid var(--rule);}
+.sec-head{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:700;margin-bottom:48px;display:flex;align-items:center;gap:20px;}
+.sec-head::after{content:'';flex:1;height:1px;background:var(--rule);}
+.aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.aud-card{background:var(--paper);padding:36px 32px;transition:background 0.2s;}
+.aud-card:hover{background:var(--paper2);}
+.aud-icon{font-size:1.6rem;margin-bottom:16px;display:block;}
+.aud-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:500;margin-bottom:10px;}
+.aud-desc{font-size:0.87rem;color:var(--ink3);line-height:1.65;font-weight:300;margin-bottom:14px;}
+.aud-pct{font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--seal);}
+
+/* OFFERINGS */
+.off-section{padding:80px 48px;border-bottom:1px solid var(--rule);}
+.off-list{display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.off-row{display:grid;grid-template-columns:56px 1fr 160px 80px;gap:36px;align-items:center;background:var(--paper);padding:30px 32px;transition:background 0.2s;}
+.off-row:hover{background:var(--paper2);}
+.o-num{font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--ink4);}
+.o-body{}
+.o-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:500;margin-bottom:4px;}
+.o-desc{font-size:0.87rem;color:var(--ink3);font-weight:300;line-height:1.5;}
+.o-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{font-family:'Cormorant SC',serif;font-size:0.56rem;letter-spacing:0.1em;padding:4px 8px;background:var(--paper2);color:var(--ink3);}
+.tag.hot{background:rgba(200,65,42,0.08);color:var(--seal);}
+.o-cta{font-family:'Cormorant SC',serif;font-size:0.62rem;letter-spacing:0.15em;color:var(--ink3);white-space:nowrap;transition:color 0.2s;}
+.off-row:hover .o-cta{color:var(--seal);}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule);}
+.c-left{padding:80px 60px;border-right:1px solid var(--rule);}
+.c-left h2{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,5.5rem);font-weight:900;line-height:0.95;margin-bottom:24px;letter-spacing:-0.01em;}
+.c-left h2 em{font-style:italic;color:var(--seal);}
+.c-left p{font-size:0.97rem;color:var(--ink3);font-weight:300;line-height:1.75;max-width:360px;margin-bottom:40px;}
+.c-info{display:flex;flex-direction:column;gap:14px;}
+.c-item{display:flex;gap:16px;align-items:center;}
+.c-item-lbl{font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--ink4);width:80px;flex-shrink:0;}
+.c-item-val{font-size:0.95rem;color:var(--ink);}
+.c-right{padding:80px 60px;}
+.c-form{display:flex;flex-direction:column;gap:20px;}
+.f-group{display:flex;flex-direction:column;}
+.f-label{font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.18em;color:var(--ink4);margin-bottom:8px;}
+.f-input{background:transparent;border:none;border-bottom:1px solid var(--rule);color:var(--ink);padding:10px 0;font-family:'Cormorant',serif;font-size:1rem;outline:none;width:100%;transition:border-color 0.2s;}
+.f-input:focus{border-bottom-color:var(--seal);}
+.f-input::placeholder{color:var(--ink4);}
+textarea.f-input{resize:vertical;min-height:100px;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.sub-btn{background:var(--ink);color:var(--paper);border:none;padding:16px 28px;font-family:'Cormorant SC',serif;font-size:0.72rem;letter-spacing:0.2em;cursor:pointer;transition:background 0.2s;text-align:left;}
+.sub-btn:hover{background:var(--seal);}
+.f-note{font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.1em;color:var(--ink4);}
+.success{display:none;text-align:center;padding:60px 20px;}
+.success.show{display:block;}
+.s-hed{font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;margin-bottom:12px;}
+.s-body{font-size:0.95rem;color:var(--ink3);font-weight:300;}
+
+footer{border-top:1px solid var(--rule);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;}
+footer p{font-family:'Cormorant SC',serif;font-size:0.62rem;letter-spacing:0.12em;color:var(--ink4);}
+.fl{display:flex;gap:24px;}
+.fl a{font-family:'Cormorant SC',serif;font-size:0.62rem;letter-spacing:0.12em;color:var(--ink4);text-decoration:none;transition:color 0.2s;}
+.fl a:hover{color:var(--seal);}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s,transform 0.8s;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  nav{padding:0 20px;grid-template-columns:1fr auto;}
+  .nav-left,.nav-right{display:none;}
+  .p-hero{padding:60px 20px 48px;}
+  .stats-row{grid-template-columns:repeat(2,1fr);gap:32px;}
+  .aud-section,.off-section{padding:48px 20px;}
+  .aud-grid{grid-template-columns:1fr;}
+  .off-row{grid-template-columns:1fr;gap:12px;}
+  .contact{grid-template-columns:1fr;}
+  .c-left{border-right:none;border-bottom:1px solid var(--rule);padding:60px 24px;}
+  .c-right{padding:48px 24px;}
+  .f-row{grid-template-columns:1fr;}
+  footer{padding:32px 20px;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <a href="../articles/index.html">Stories</a>
+    <a href="../newsletter/index.html">The Asia Letter</a>
+  </div>
+  <a href="../index.html" class="nav-logo">XIXI<span class="sd">●</span></a>
+  <div class="nav-right">
+    <a href="../about/index.html">About</a>
+    <a href="index.html" class="active">Partner</a>
+    <a href="../newsletter/index.html" class="nav-sub">Subscribe</a>
+  </div>
+</nav>
+
+<div class="p-hero">
+  <div class="kicker">Brand Partnerships</div>
+  <h1>Reach Asia's<br><em>Tastemakers.</em></h1>
+  <div class="stats-row">
+    <div class="stat-block"><span class="s-big">80K+</span><span class="s-lbl">Monthly Reach</span></div>
+    <div class="stat-block"><span class="s-big">12K+</span><span class="s-lbl">Newsletter Subs</span></div>
+    <div class="stat-block"><span class="s-big">48%</span><span class="s-lbl">Open Rate</span></div>
+    <p class="hero-copy">XIXI connects premium and luxury brands with the Gen Z and millennial Asian audience that controls global cultural taste.</p>
+  </div>
+</div>
+
+<div class="aud-section reveal">
+  <h2 class="sec-head">Our Audience</h2>
+  <div class="aud-grid">
+    <div class="aud-card">
+      <span class="aud-icon">✦</span>
+      <div class="aud-title">Gen Z Luxury Consumers</div>
+      <p class="aud-desc">18–28, brand-literate, mobile-first. They decide what is cool before the algorithms do.</p>
+      <div class="aud-pct">62% of XIXI readers</div>
+    </div>
+    <div class="aud-card">
+      <span class="aud-icon">◈</span>
+      <div class="aud-title">Creative & Cultural Professionals</div>
+      <p class="aud-desc">Designers, curators, creators, editors across Singapore, Tokyo, Seoul, Jakarta, and beyond.</p>
+      <div class="aud-pct">24% of XIXI readers</div>
+    </div>
+    <div class="aud-card">
+      <span class="aud-icon">◉</span>
+      <div class="aud-title">Investors & Founders</div>
+      <p class="aud-desc">VCs, family office principals, and next-gen founders. Our Capital coverage attracts real money.</p>
+      <div class="aud-pct">14% of XIXI readers</div>
+    </div>
+  </div>
+</div>
+
+<div class="off-section reveal">
+  <h2 class="sec-head">How We Partner</h2>
+  <div class="off-list">
+    <div class="off-row">
+      <span class="o-num">01</span>
+      <div class="o-body"><div class="o-name">Editorial Partnerships</div><p class="o-desc">Deeply integrated branded content, written by the XIXI editorial team. Authentic and contextual.</p></div>
+      <div class="o-tags"><span class="tag hot">Most Popular</span><span class="tag">Long-form</span></div>
+      <span class="o-cta">Enquire →</span>
+    </div>
+    <div class="off-row">
+      <span class="o-num">02</span>
+      <div class="o-body"><div class="o-name">Newsletter Sponsorship</div><p class="o-desc">Sponsor The Asia Letter — single-sponsor format, 12,000+ readers, no banner blindness.</p></div>
+      <div class="o-tags"><span class="tag">Weekly</span><span class="tag">12K+ Subs</span></div>
+      <span class="o-cta">Enquire →</span>
+    </div>
+    <div class="off-row">
+      <span class="o-num">03</span>
+      <div class="o-body"><div class="o-name">Digital Display</div><p class="o-desc">Premium placements across XIXI web properties. Limited inventory, contextually matched.</p></div>
+      <div class="o-tags"><span class="tag">Display</span><span class="tag">Targeted</span></div>
+      <span class="o-cta">Enquire →</span>
+    </div>
+    <div class="off-row">
+      <span class="o-num">04</span>
+      <div class="o-body"><div class="o-name">Event & Experience</div><p class="o-desc">IRL and digital events, editorial roundtables, panel series. Reach our community in person.</p></div>
+      <div class="o-tags"><span class="tag">Events</span><span class="tag">Bespoke</span></div>
+      <span class="o-cta">Enquire →</span>
+    </div>
+    <div class="off-row">
+      <span class="o-num">05</span>
+      <div class="o-body"><div class="o-name">Strategic Brand Partnership</div><p class="o-desc">Campaigns, content, coverage, and community — co-designed around your brief from scratch.</p></div>
+      <div class="o-tags"><span class="tag hot">Custom</span><span class="tag">Bespoke</span></div>
+      <span class="o-cta">Enquire →</span>
+    </div>
+  </div>
+</div>
+
+<div class="contact reveal">
+  <div class="c-left">
+    <h2>Let's Build<br><em>Something.</em></h2>
+    <p>Tell us who you are, what you're building, and who you want to reach. We'll come back with ideas — not rate cards.</p>
+    <div class="c-info">
+      <div class="c-item"><span class="c-item-lbl">Email</span><span class="c-item-val">partners@xixi.media</span></div>
+      <div class="c-item"><span class="c-item-lbl">Based</span><span class="c-item-val">Singapore</span></div>
+      <div class="c-item"><span class="c-item-lbl">Response</span><span class="c-item-val">Within 48 hours</span></div>
+    </div>
+  </div>
+  <div class="c-right">
+    <div id="formWrap">
+      <div class="c-form">
+        <div class="f-row">
+          <div class="f-group"><label class="f-label">First Name</label><input type="text" class="f-input" placeholder="Jane"></div>
+          <div class="f-group"><label class="f-label">Last Name</label><input type="text" class="f-input" placeholder="Smith"></div>
+        </div>
+        <div class="f-group"><label class="f-label">Brand / Company</label><input type="text" class="f-input" placeholder="Your brand"></div>
+        <div class="f-group"><label class="f-label">Email</label><input type="email" class="f-input" placeholder="you@brand.com"></div>
+        <div class="f-group"><label class="f-label">Partnership Interest</label><input type="text" class="f-input" placeholder="Editorial, Newsletter, Event…"></div>
+        <div class="f-group"><label class="f-label">Tell Us More</label><textarea class="f-input" placeholder="Your brief, goals, timeline, budget range…"></textarea></div>
+        <button class="sub-btn" onclick="doSubmit()">Send Enquiry →</button>
+        <p class="f-note">We respond to all enquiries within 48 hours</p>
+      </div>
+    </div>
+    <div class="success" id="successMsg">
+      <div class="s-hed">Enquiry Received ✦</div>
+      <p class="s-body">Thank you. A member of the XIXI partnerships team will be in touch within 48 hours.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 XIXI Media · Part of Shibuya Holdings</p>
+  <div class="fl">
+    <a href="../index.html">Home</a>
+    <a href="../articles/index.html">Stories</a>
+    <a href="../newsletter/index.html">Newsletter</a>
+    <a href="../about/index.html">About</a>
+  </div>
+</footer>
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*100);});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function doSubmit(){document.getElementById('formWrap').style.display='none';document.getElementById('successMsg').classList.add('show');}
+if(window.netlifyIdentity){window.netlifyIdentity.on("init",u=>{if(!u)window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});});}
+</script>
+</body>
+</html>

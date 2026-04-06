@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Asia Letter — XIXI Newsletter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+:root{--paper:#F7F3EE;--paper2:#EDE8E1;--ink:#1A1714;--ink2:#3D3833;--ink3:#6B6560;--ink4:#9E9992;--seal:#C8412A;--rule:rgba(26,23,20,0.12);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--paper);color:var(--ink);font-family:'Cormorant',serif;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");background-size:200px 200px;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(247,243,238,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 48px;height:68px;}
+.nav-left{display:flex;gap:36px;}
+.nav-left a,.nav-right a{font-family:'Cormorant SC',serif;font-size:0.72rem;letter-spacing:0.18em;color:var(--ink3);text-decoration:none;transition:color 0.2s;}
+.nav-left a:hover,.nav-right a:hover,.nav-left a.active{color:var(--seal);}
+.nav-logo{text-align:center;font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:900;letter-spacing:0.25em;color:var(--ink);text-decoration:none;line-height:1;}
+.nav-logo .sd{color:var(--seal);font-size:0.4em;vertical-align:super;margin-left:2px;}
+.nav-right{display:flex;gap:36px;justify-content:flex-end;}
+.nav-sub{font-family:'Cormorant SC',serif!important;font-size:0.68rem!important;letter-spacing:0.2em!important;color:var(--paper)!important;background:var(--ink);padding:9px 22px;transition:background 0.2s!important;}
+.nav-sub:hover{background:var(--seal)!important;}
+
+/* HERO SPLIT */
+.hero{margin-top:68px;min-height:calc(100vh - 68px);display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule);}
+
+.h-left{padding:80px 64px 80px 48px;border-right:1px solid var(--rule);display:flex;flex-direction:column;justify-content:space-between;}
+.kicker{font-family:'Cormorant SC',serif;font-size:0.7rem;letter-spacing:0.28em;color:var(--ink4);display:flex;align-items:center;gap:14px;margin-bottom:40px;}
+.kicker::before{content:'';width:24px;height:1px;background:var(--seal);display:block;}
+
+.h-title{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,6vw,7.5rem);font-weight:900;line-height:0.92;letter-spacing:-0.02em;margin-bottom:16px;}
+.h-title em{display:block;font-style:italic;color:var(--seal);}
+.h-subtitle{font-family:'Cormorant',serif;font-style:italic;font-size:1.25rem;color:var(--ink3);margin-bottom:40px;font-weight:300;}
+.h-desc{font-size:1rem;color:var(--ink3);font-weight:300;line-height:1.75;max-width:400px;margin-bottom:44px;}
+
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:44px;}
+.pillar{border:1px solid var(--rule);padding:16px 18px;transition:border-color 0.2s;}
+.pillar:hover{border-color:var(--seal);}
+.p-n{font-family:'Cormorant SC',serif;font-size:0.58rem;letter-spacing:0.18em;color:var(--seal);margin-bottom:6px;}
+.p-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;}
+
+.stats{display:flex;gap:40px;padding-top:36px;border-top:1px solid var(--rule);}
+.stat-big{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--ink);display:block;line-height:1;}
+.stat-lbl{font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--ink4);}
+
+/* RIGHT — SIGNUP */
+.h-right{padding:80px 52px;display:flex;align-items:center;}
+.signup-box{width:100%;}
+.sb-label{font-family:'Cormorant SC',serif;font-size:0.68rem;letter-spacing:0.22em;color:var(--ink4);margin-bottom:20px;}
+.sb-heading{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;line-height:1.2;margin-bottom:10px;font-style:italic;}
+.sb-sub{font-size:0.92rem;color:var(--ink3);font-weight:300;line-height:1.65;margin-bottom:32px;}
+
+.s-form{display:flex;flex-direction:column;gap:14px;}
+.s-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.s-input{background:transparent;border:none;border-bottom:1px solid var(--rule);color:var(--ink);padding:12px 0;font-family:'Cormorant',serif;font-size:1rem;outline:none;width:100%;transition:border-color 0.2s;}
+.s-input:focus{border-bottom-color:var(--seal);}
+.s-input::placeholder{color:var(--ink4);}
+.s-btn{background:var(--ink);color:var(--paper);border:none;padding:16px 28px;font-family:'Cormorant SC',serif;font-size:0.72rem;letter-spacing:0.2em;cursor:pointer;transition:background 0.2s;margin-top:6px;text-align:left;width:100%;}
+.s-btn:hover{background:var(--seal);}
+.s-fine{font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.1em;color:var(--ink4);text-align:center;margin-top:8px;}
+
+/* recent issues */
+.recent{margin-top:36px;padding-top:32px;border-top:1px solid var(--rule);}
+.r-label{font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.2em;color:var(--ink4);margin-bottom:16px;}
+.r-issue{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;transition:opacity 0.2s;}
+.r-issue:hover{opacity:0.65;}
+.r-issue:last-child{border-bottom:none;}
+.r-num{font-family:'Cormorant SC',serif;font-size:0.58rem;letter-spacing:0.15em;color:var(--seal);background:rgba(200,65,42,0.08);padding:4px 8px;flex-shrink:0;}
+.r-title{font-size:0.9rem;font-weight:400;line-height:1.3;flex:1;}
+.r-date{font-family:'Cormorant SC',serif;font-size:0.58rem;letter-spacing:0.1em;color:var(--ink4);flex-shrink:0;}
+
+/* SUCCESS */
+.success{display:none;text-align:center;padding:60px 20px;}
+.success.show{display:block;}
+.s-icon{font-size:2.5rem;color:var(--seal);margin-bottom:16px;}
+.s-hed{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;margin-bottom:12px;font-style:italic;}
+.s-body{font-size:0.95rem;color:var(--ink3);font-weight:300;line-height:1.65;}
+
+footer{border-top:1px solid var(--rule);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;}
+footer p{font-family:'Cormorant SC',serif;font-size:0.62rem;letter-spacing:0.12em;color:var(--ink4);}
+.fl{display:flex;gap:24px;}
+.fl a{font-family:'Cormorant SC',serif;font-size:0.62rem;letter-spacing:0.12em;color:var(--ink4);text-decoration:none;transition:color 0.2s;}
+.fl a:hover{color:var(--seal);}
+
+@media(max-width:900px){
+  nav{padding:0 20px;grid-template-columns:1fr auto;}
+  .nav-left,.nav-right{display:none;}
+  .hero{grid-template-columns:1fr;}
+  .h-left{padding:60px 24px;border-right:none;border-bottom:1px solid var(--rule);}
+  .h-right{padding:48px 24px;align-items:flex-start;}
+  .s-row{grid-template-columns:1fr;}
+  footer{padding:32px 20px;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <a href="../articles/index.html">Stories</a>
+    <a href="index.html" class="active">The Asia Letter</a>
+  </div>
+  <a href="../index.html" class="nav-logo">XIXI<span class="sd">●</span></a>
+  <div class="nav-right">
+    <a href="../about/index.html">About</a>
+    <a href="../advertise/index.html">Partner</a>
+    <a href="index.html" class="nav-sub">Subscribe</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="h-left">
+    <div>
+      <div class="kicker">Weekly Newsletter</div>
+      <h1 class="h-title">The Asia<em>Letter.</em></h1>
+      <p class="h-subtitle">Culture. Commerce. Creators. Capital.</p>
+      <p class="h-desc">Every week, XIXI editors curate the most essential moves across Asian culture, luxury, business, and creative power. Written for the globally curious. Read by those already ahead.</p>
+      <div class="pillars">
+        <div class="pillar"><div class="p-n">01 / Culture</div><div class="p-name">Trends & Taste</div></div>
+        <div class="pillar"><div class="p-n">02 / Commerce</div><div class="p-name">Markets & Money</div></div>
+        <div class="pillar"><div class="p-n">03 / Creators</div><div class="p-name">Voices & Vision</div></div>
+        <div class="pillar"><div class="p-n">04 / Capital</div><div class="p-name">Power & Flow</div></div>
+      </div>
+    </div>
+    <div class="stats">
+      <div><span class="stat-big">12K+</span><span class="stat-lbl">Subscribers</span></div>
+      <div><span class="stat-big">48%</span><span class="stat-lbl">Open Rate</span></div>
+      <div><span class="stat-big">Free</span><span class="stat-lbl">Always</span></div>
+    </div>
+  </div>
+
+  <div class="h-right">
+    <div class="signup-box">
+      <div id="formWrap">
+        <div class="sb-label">Join the readers</div>
+        <h2 class="sb-heading">Your weekly briefing on Asian culture, commerce & power.</h2>
+        <p class="sb-sub">No noise. No filler. Just the moves that matter — every Thursday morning.</p>
+        <div class="s-form">
+          <div class="s-row">
+            <input type="text" class="s-input" placeholder="First name">
+            <input type="text" class="s-input" placeholder="Last name">
+          </div>
+          <input type="email" class="s-input" placeholder="Email address">
+          <button class="s-btn" onclick="doSignup()">Subscribe to The Asia Letter →</button>
+          <p class="s-fine">Free forever · No spam · Unsubscribe anytime</p>
+        </div>
+        <div class="recent">
+          <p class="r-label">Recent Issues</p>
+          <a href="#" class="r-issue"><span class="r-num">#047</span><span class="r-title">The K-Wave Second Act: What Comes After Hallyu</span><span class="r-date">May 15</span></a>
+          <a href="#" class="r-issue"><span class="r-num">#046</span><span class="r-title">Singapore's New Wealth Code & What It Means For Brands</span><span class="r-date">May 8</span></a>
+          <a href="#" class="r-issue"><span class="r-num">#045</span><span class="r-title">Japan's Luxury Resale Boom and the Collectors Driving It</span><span class="r-date">May 1</span></a>
+        </div>
+      </div>
+      <div class="success" id="successBox">
+        <div class="s-icon">✦</div>
+        <div class="s-hed">You're In.</div>
+        <p class="s-body">Welcome to The Asia Letter.<br>Your first issue lands Thursday.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 XIXI Media · Part of Shibuya Holdings</p>
+  <div class="fl">
+    <a href="../index.html">Home</a>
+    <a href="../articles/index.html">Stories</a>
+    <a href="../advertise/index.html">Partner</a>
+    <a href="../about/index.html">About</a>
+  </div>
+</footer>
+<script>
+function doSignup(){document.getElementById('formWrap').style.display='none';document.getElementById('successBox').classList.add('show');}
+if(window.netlifyIdentity){window.netlifyIdentity.on("init",u=>{if(!u)window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});});}
+</script>
+</body>
+</html>

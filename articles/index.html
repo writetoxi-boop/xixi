@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stories — XIXI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+:root { --paper:#F7F3EE; --paper2:#EDE8E1; --ink:#1A1714; --ink2:#3D3833; --ink3:#6B6560; --ink4:#9E9992; --seal:#C8412A; --rule:rgba(26,23,20,0.12); }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--paper);color:var(--ink);font-family:'Cormorant',serif;font-size:18px;line-height:1.6;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");background-size:200px 200px;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(247,243,238,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 48px;height:68px;}
+.nav-left{display:flex;gap:36px;}
+.nav-left a,.nav-right a{font-family:'Cormorant SC',serif;font-size:0.72rem;letter-spacing:0.18em;color:var(--ink3);text-decoration:none;transition:color 0.2s;}
+.nav-left a:hover,.nav-right a:hover,.nav-left a.active{color:var(--seal);}
+.nav-logo{text-align:center;font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:900;letter-spacing:0.25em;color:var(--ink);text-decoration:none;line-height:1;}
+.nav-logo .sd{color:var(--seal);font-size:0.4em;vertical-align:super;margin-left:2px;}
+.nav-right{display:flex;gap:36px;justify-content:flex-end;}
+.nav-sub{font-family:'Cormorant SC',serif!important;font-size:0.68rem!important;letter-spacing:0.2em!important;color:var(--paper)!important;background:var(--ink);padding:9px 22px;transition:background 0.2s!important;}
+.nav-sub:hover{background:var(--seal)!important;color:var(--paper)!important;}
+
+/* PAGE HEADER */
+.page-head{margin-top:68px;padding:80px 48px 60px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;}
+.page-head h1{font-family:'Playfair Display',serif;font-size:clamp(4rem,8vw,9rem);font-weight:900;line-height:0.9;letter-spacing:-0.02em;}
+.page-head h1 em{font-style:italic;color:var(--seal);}
+.page-head-right p{font-size:0.98rem;color:var(--ink3);font-weight:300;line-height:1.75;margin-bottom:20px;}
+.story-count{font-family:'Cormorant SC',serif;font-size:0.65rem;letter-spacing:0.18em;color:var(--ink4);}
+.story-count em{color:var(--seal);font-style:normal;}
+
+/* FILTER */
+.filter-row{display:flex;gap:0;border-bottom:1px solid var(--rule);padding:0 48px;overflow-x:auto;}
+.f-btn{font-family:'Cormorant SC',serif;font-size:0.68rem;letter-spacing:0.2em;color:var(--ink4);background:none;border:none;padding:18px 24px;cursor:pointer;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;white-space:nowrap;}
+.f-btn:hover{color:var(--ink);}
+.f-btn.on{color:var(--seal);border-bottom-color:var(--seal);}
+
+/* LIST */
+.list-wrap{padding:0 48px 100px;}
+.a-row{display:grid;grid-template-columns:72px 1fr auto;gap:40px;align-items:start;padding:44px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;transition:background 0.15s;}
+.a-row:hover .a-row-title{color:var(--seal);}
+.a-num{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:900;color:rgba(200,65,42,0.12);line-height:1;padding-top:4px;}
+.a-body{}
+.a-tag{font-family:'Cormorant SC',serif;font-size:0.62rem;letter-spacing:0.22em;color:var(--seal);margin-bottom:10px;}
+.a-row-title{font-family:'Playfair Display',serif;font-size:clamp(1.15rem,1.8vw,1.65rem);font-weight:500;line-height:1.25;margin-bottom:12px;transition:color 0.2s;font-style:italic;}
+.a-excerpt{font-size:0.9rem;color:var(--ink3);font-weight:300;line-height:1.65;max-width:580px;}
+.a-aside{text-align:right;flex-shrink:0;}
+.a-author{font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.12em;color:var(--ink3);display:block;margin-bottom:4px;white-space:nowrap;}
+.a-when{font-family:'Cormorant SC',serif;font-size:0.58rem;letter-spacing:0.1em;color:var(--ink4);display:block;margin-bottom:12px;}
+.a-rt{background:var(--paper2);padding:4px 10px;font-family:'Cormorant SC',serif;font-size:0.58rem;letter-spacing:0.1em;color:var(--ink3);}
+
+.a-row[data-cat]{display:grid;} .a-row.gone{display:none!important;}
+
+footer{border-top:1px solid var(--rule);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;}
+footer p{font-family:'Cormorant SC',serif;font-size:0.62rem;letter-spacing:0.12em;color:var(--ink4);}
+.fl{display:flex;gap:24px;}
+.fl a{font-family:'Cormorant SC',serif;font-size:0.62rem;letter-spacing:0.12em;color:var(--ink4);text-decoration:none;transition:color 0.2s;}
+.fl a:hover{color:var(--seal);}
+
+@media(max-width:768px){
+  nav{padding:0 20px;grid-template-columns:1fr auto;}
+  .nav-left,.nav-right{display:none;}
+  .page-head{grid-template-columns:1fr;padding:60px 20px 40px;}
+  .filter-row{padding:0 20px;}
+  .list-wrap{padding:0 20px 64px;}
+  .a-row{grid-template-columns:1fr;gap:12px;}
+  .a-aside{text-align:left;}
+  footer{padding:32px 20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="active">Stories</a>
+    <a href="../newsletter/index.html">The Asia Letter</a>
+  </div>
+  <a href="../index.html" class="nav-logo">XIXI<span class="sd">●</span></a>
+  <div class="nav-right">
+    <a href="../about/index.html">About</a>
+    <a href="../advertise/index.html">Partner</a>
+    <a href="../newsletter/index.html" class="nav-sub">Subscribe</a>
+  </div>
+</nav>
+
+<div class="page-head">
+  <h1>All<br><em>Stories.</em></h1>
+  <div class="page-head-right">
+    <p>Every story we publish is a lens on the forces shaping Asian culture, commerce, and power in the 21st century.</p>
+    <p class="story-count">Showing <em id="cnt">12</em> stories</p>
+  </div>
+</div>
+
+<div class="filter-row">
+  <button class="f-btn on" data-f="all">All</button>
+  <button class="f-btn" data-f="fashion">Fashion</button>
+  <button class="f-btn" data-f="art">Art</button>
+  <button class="f-btn" data-f="culture">Culture</button>
+  <button class="f-btn" data-f="capital">Capital</button>
+  <button class="f-btn" data-f="power">Power</button>
+</div>
+
+<div class="list-wrap">
+  <a class="a-row" data-cat="fashion" href="#">
+    <div class="a-num">01</div>
+    <div class="a-body">
+      <div class="a-tag">Fashion</div>
+      <h2 class="a-row-title">Seoul Is the New Milan: Inside the K-Fashion Takeover Reshaping Global Runways</h2>
+      <p class="a-excerpt">From Gentle Monster to Ader Error, a new generation of Korean designers is doing what no one thought possible — making the West come to them.</p>
+    </div>
+    <div class="a-aside"><span class="a-author">Ji-Yeon Park</span><span class="a-when">3 days ago</span><span class="a-rt">9 min</span></div>
+  </a>
+  <a class="a-row" data-cat="capital" href="#">
+    <div class="a-num">02</div>
+    <div class="a-body">
+      <div class="a-tag">Capital</div>
+      <h2 class="a-row-title">The $500B Question: Where Is Asia's New Money Going?</h2>
+      <p class="a-excerpt">Asia's ultra-high-net-worth individuals are deploying capital in ways that are rewriting the global investment playbook.</p>
+    </div>
+    <div class="a-aside"><span class="a-author">Ray Tanaka</span><span class="a-when">5 days ago</span><span class="a-rt">7 min</span></div>
+  </a>
+  <a class="a-row" data-cat="art" href="#">
+    <div class="a-num">03</div>
+    <div class="a-body">
+      <div class="a-tag">Art</div>
+      <h2 class="a-row-title">Ink, Identity and the Digital Canvas: Asia's Artists Are Unafraid</h2>
+      <p class="a-excerpt">A new cohort of digital artists across Tokyo, Manila, and Jakarta is using AI not as a trend but as a tool of cultural reclamation.</p>
+    </div>
+    <div class="a-aside"><span class="a-author">Soo-Ah Kim</span><span class="a-when">1 week ago</span><span class="a-rt">6 min</span></div>
+  </a>
+  <a class="a-row" data-cat="culture" href="#">
+    <div class="a-num">04</div>
+    <div class="a-body">
+      <div class="a-tag">Culture</div>
+      <h2 class="a-row-title">The Quiet Luxury Codes That Only Asians Understand</h2>
+      <p class="a-excerpt">While the West discovers "stealth wealth", Asia has always had its own vocabulary of understated opulence. We decode it.</p>
+    </div>
+    <div class="a-aside"><span class="a-author">Aiko Mori</span><span class="a-when">1 week ago</span><span class="a-rt">5 min</span></div>
+  </a>
+  <a class="a-row" data-cat="power" href="#">
+    <div class="a-num">05</div>
+    <div class="a-body">
+      <div class="a-tag">Power</div>
+      <h2 class="a-row-title">30 Under 30: The Asian Founders Quietly Building Empires</h2>
+      <p class="a-excerpt">These are the names you should know before the rest of the world does. XIXI's inaugural power list of Asia's most consequential young founders.</p>
+    </div>
+    <div class="a-aside"><span class="a-author">Lin Wei</span><span class="a-when">2 weeks ago</span><span class="a-rt">11 min</span></div>
+  </a>
+  <a class="a-row" data-cat="fashion" href="#">
+    <div class="a-num">06</div>
+    <div class="a-body">
+      <div class="a-tag">Fashion</div>
+      <h2 class="a-row-title">Beyond the Qipao: How Asian Heritage Is Reinventing Bridal Fashion</h2>
+      <p class="a-excerpt">A new generation of brides across Singapore, Hong Kong, and Tokyo is demanding something the industry never offered — themselves.</p>
+    </div>
+    <div class="a-aside"><span class="a-author">Priya Nair</span><span class="a-when">2 weeks ago</span><span class="a-rt">8 min</span></div>
+  </a>
+  <a class="a-row" data-cat="culture" href="#">
+    <div class="a-num">07</div>
+    <div class="a-body">
+      <div class="a-tag">Culture</div>
+      <h2 class="a-row-title">Why Every Global Brand Needs a Southeast Asia Strategy Now</h2>
+      <p class="a-excerpt">The 680 million people of Southeast Asia are young, mobile-first, and brand-literate. The brands that understand this are winning big.</p>
+    </div>
+    <div class="a-aside"><span class="a-author">Maya Santos</span><span class="a-when">3 weeks ago</span><span class="a-rt">10 min</span></div>
+  </a>
+  <a class="a-row" data-cat="art" href="#">
+    <div class="a-num">08</div>
+    <div class="a-body">
+      <div class="a-tag">Art</div>
+      <h2 class="a-row-title">Art Basel Hong Kong and the New Asian Art Market</h2>
+      <p class="a-excerpt">How one fair transformed Hong Kong into the third pillar of the global contemporary art market — and what comes next.</p>
+    </div>
+    <div class="a-aside"><span class="a-author">Chen Bo</span><span class="a-when">3 weeks ago</span><span class="a-rt">9 min</span></div>
+  </a>
+  <a class="a-row" data-cat="capital" href="#">
+    <div class="a-num">09</div>
+    <div class="a-body">
+      <div class="a-tag">Capital</div>
+      <h2 class="a-row-title">Singapore's Golden Visa Wave: Who's Coming and Why It Matters</h2>
+      <p class="a-excerpt">A record number of ultra-high-net-worth individuals are relocating to Singapore. We look at the forces behind the migration.</p>
+    </div>
+    <div class="a-aside"><span class="a-author">Ray Tanaka</span><span class="a-when">1 month ago</span><span class="a-rt">8 min</span></div>
+  </a>
+  <a class="a-row" data-cat="power" href="#">
+    <div class="a-num">10</div>
+    <div class="a-body">
+      <div class="a-tag">Power</div>
+      <h2 class="a-row-title">The Creators Running Asia's Cultural Economy</h2>
+      <p class="a-excerpt">They have millions of followers and nine-figure brand deals. Meet the creators who are the new faces of Asian soft power.</p>
+    </div>
+    <div class="a-aside"><span class="a-author">Ji-Yeon Park</span><span class="a-when">1 month ago</span><span class="a-rt">12 min</span></div>
+  </a>
+  <a class="a-row" data-cat="fashion" href="#">
+    <div class="a-num">11</div>
+    <div class="a-body">
+      <div class="a-tag">Fashion</div>
+      <h2 class="a-row-title">The Vintage Underground: Tokyo's Secret Secondhand Economy</h2>
+      <p class="a-excerpt">Long before resale went mainstream, Tokyo built a secondhand fashion ecosystem the world is still trying to replicate.</p>
+    </div>
+    <div class="a-aside"><span class="a-author">Aiko Mori</span><span class="a-when">1 month ago</span><span class="a-rt">6 min</span></div>
+  </a>
+  <a class="a-row" data-cat="culture" href="#">
+    <div class="a-num">12</div>
+    <div class="a-body">
+      <div class="a-tag">Culture</div>
+      <h2 class="a-row-title">K-Pop's Lesson for Every Global Brand: Authenticity Scales</h2>
+      <p class="a-excerpt">The global domination of K-Pop didn't happen because of trend-chasing. It happened because of obsessive, principled world-building.</p>
+    </div>
+    <div class="a-aside"><span class="a-author">Soo-Ah Kim</span><span class="a-when">5 weeks ago</span><span class="a-rt">7 min</span></div>
+  </a>
+</div>
+
+<footer>
+  <p>© 2025 XIXI Media · Part of Shibuya Holdings</p>
+  <div class="fl">
+    <a href="../index.html">Home</a>
+    <a href="../newsletter/index.html">Newsletter</a>
+    <a href="../advertise/index.html">Partner</a>
+    <a href="../about/index.html">About</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.f-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      const f = btn.dataset.f;
+      let n = 0;
+      document.querySelectorAll('.a-row').forEach(row => {
+        const show = f === 'all' || row.dataset.cat === f;
+        row.classList.toggle('gone', !show);
+        if (show) { n++; row.querySelector('.a-num').textContent = String(n).padStart(2,'0'); }
+      });
+      document.getElementById('cnt').textContent = n;
+    });
+  });
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", u => { if (!u) window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); });
+  }
+</script>
+</body>
+</html>

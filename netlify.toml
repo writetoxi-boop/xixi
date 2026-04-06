@@ -1,0 +1,27 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+
+[[redirects]]
+  from = "/stories"
+  to = "/articles/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/about/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/partner"
+  to = "/advertise/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/subscribe"
+  to = "/newsletter/index.html"
+  status = 200

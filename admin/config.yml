@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    label_singular: "Article"
+    folder: "content/articles"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - label: "Vertical"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Fashion", value: "fashion" }
+          - { label: "Art", value: "art" }
+          - { label: "Culture", value: "culture" }
+          - { label: "Capital", value: "capital" }
+          - { label: "Power", value: "power" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Read Time (e.g. 9 min)", name: "read_time", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "text", hint: "1–2 sentences shown in article listings." }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, required: false }
+
+  - name: "newsletter"
+    label: "Newsletter Issues"
+    label_singular: "Issue"
+    folder: "content/newsletter"
+    create: true
+    slug: "issue-{{fields.issue_number}}"
+    fields:
+      - { label: "Issue Number", name: "issue_number", widget: "number" }
+      - { label: "Subject Line", name: "title", widget: "string" }
+      - { label: "Send Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Global Settings"
+        name: "global"
+        file: "content/settings.json"
+        fields:
+          - { label: "Newsletter Subscriber Count", name: "subscriber_count", widget: "string" }
+          - { label: "Partnership Email", name: "partner_email", widget: "string" }
