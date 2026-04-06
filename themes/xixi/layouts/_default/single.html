@@ -1,0 +1,27 @@
+{{ define "main" }}
+<article class="article-wrap">
+  <div class="article-header">
+    <div class="article-meta-top">
+      <span class="a-tag">{{ .Params.category | title }}</span>
+      <span class="article-date">{{ .Date.Format "2 January 2006" }}</span>
+    </div>
+    <h1 class="article-title">{{ .Title }}</h1>
+    <p class="article-excerpt">{{ .Params.excerpt }}</p>
+    <div class="article-byline">
+      <span class="article-author">By {{ .Params.author }}</span>
+      <span class="article-readtime">{{ .Params.read_time }}</span>
+    </div>
+  </div>
+  {{ if .Params.image }}
+  <div class="article-image">
+    <img src="{{ .Params.image }}" alt="{{ .Title }}">
+  </div>
+  {{ end }}
+  <div class="article-body">
+    {{ .Content }}
+  </div>
+  <div class="article-footer">
+    <a href="/articles/" class="btn-text">← All Stories</a>
+  </div>
+</article>
+{{ end }}

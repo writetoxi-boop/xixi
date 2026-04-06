@@ -1,0 +1,123 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-kicker">Asia's Gen Z Luxury Media Platform</div>
+    <div class="hero-headline">
+      <h1>The World<br>Is Looking<br><em>East.</em></h1>
+    </div>
+    <div class="hero-bottom">
+      <p class="hero-desc">XIXI spotlights Asian culture, fashion, art, and power through a global lens — unfiltered, unapologetic, essential.</p>
+      <div class="hero-actions">
+        <a href="/articles/" class="btn-primary">Read Now</a>
+        <a href="/newsletter/" class="btn-text">The Asia Letter</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    {{ $featured := where (where .Site.RegularPages "Section" "articles") ".Params.featured" true }}
+    {{ if $featured }}
+      {{ with index $featured 0 }}
+      <a href="{{ .Permalink }}" class="hero-cover">
+        <div class="cover-visual"></div>
+        <div class="seal-stamp"><span>XIXI</span></div>
+        <div class="cover-content">
+          <div class="cover-tag">Cover Story</div>
+          <h2 class="cover-title">{{ .Title }}</h2>
+          <p class="cover-meta">{{ .Params.author }} · {{ .Params.category | title }} · {{ .Params.read_time }}</p>
+        </div>
+      </a>
+      {{ end }}
+    {{ else }}
+    <a href="/articles/" class="hero-cover">
+      <div class="cover-visual"></div>
+      <div class="seal-stamp"><span>XIXI</span></div>
+      <div class="cover-content">
+        <div class="cover-tag">Cover Story</div>
+        <h2 class="cover-title">The Architects of Tomorrow: How Asia's Gen Z Is Rewriting the Rules of Luxury</h2>
+        <p class="cover-meta">Mei Lin Zhang · Fashion · 12 min read</p>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+<nav class="verticals">
+  <a href="/articles/?cat=fashion" class="vertical"><span class="v-num">01</span><span class="v-name">Fashion</span></a>
+  <a href="/articles/?cat=art" class="vertical"><span class="v-num">02</span><span class="v-name">Art</span></a>
+  <a href="/articles/?cat=culture" class="vertical"><span class="v-num">03</span><span class="v-name">Culture</span></a>
+  <a href="/articles/?cat=capital" class="vertical"><span class="v-num">04</span><span class="v-name">Capital</span></a>
+  <a href="/articles/?cat=power" class="vertical"><span class="v-num">05</span><span class="v-name">Power</span></a>
+</nav>
+
+<div class="section-head reveal">
+  <span class="section-label">Latest Stories</span>
+  <a href="/articles/" class="section-more">All Stories</a>
+</div>
+
+{{ $articles := where .Site.RegularPages "Section" "articles" }}
+{{ $articles = $articles.ByDate.Reverse }}
+
+<div class="grid-main reveal">
+  {{ range first 1 $articles }}
+  <a class="a-card lead" href="{{ .Permalink }}">
+    <div>
+      <div class="a-tag">{{ .Params.category | title }}</div>
+      <h2 class="a-title">{{ .Title }}</h2>
+    </div>
+    <p class="a-excerpt">{{ .Params.excerpt }}</p>
+    <div class="a-meta">
+      <span>{{ .Params.author }} · {{ .Date.Format "2 Jan 2006" }}</span>
+      <span class="a-readtime">{{ .Params.read_time }}</span>
+    </div>
+  </a>
+  {{ end }}
+  {{ range after 1 (first 3 $articles) }}
+  <a class="a-card" href="{{ .Permalink }}">
+    <div>
+      <div class="a-tag">{{ .Params.category | title }}</div>
+      <h2 class="a-title">{{ .Title }}</h2>
+    </div>
+    <div class="a-meta">
+      <span>{{ .Params.author }} · {{ .Date.Format "2 Jan 2006" }}</span>
+      <span class="a-readtime">{{ .Params.read_time }}</span>
+    </div>
+  </a>
+  {{ end }}
+</div>
+
+<div class="grid-secondary reveal">
+  {{ range after 3 (first 6 $articles) }}
+  <a class="a-card" href="{{ .Permalink }}">
+    <div>
+      <div class="a-tag">{{ .Params.category | title }}</div>
+      <h2 class="a-title">{{ .Title }}</h2>
+    </div>
+    <div class="a-meta">
+      <span>{{ .Params.author }} · {{ .Date.Format "2 Jan 2006" }}</span>
+      <span class="a-readtime">{{ .Params.read_time }}</span>
+    </div>
+  </a>
+  {{ end }}
+</div>
+
+<div class="divider"></div>
+<div class="nl-band reveal">
+  <div class="nl-left">
+    <div class="nl-kicker">Free Weekly Newsletter</div>
+    <h2 class="nl-title">The Asia<br><em>Letter.</em></h2>
+    <p class="nl-desc">Culture. Commerce. Creators. Capital. Every week — curated for the globally curious.</p>
+    <div class="nl-stats">
+      <div class="nl-stat"><span>12K+</span><span>Readers</span></div>
+      <div class="nl-stat"><span>48%</span><span>Open Rate</span></div>
+      <div class="nl-stat"><span>Free</span><span>Always</span></div>
+    </div>
+  </div>
+  <div class="nl-right">
+    <div class="nl-form">
+      <input type="email" class="nl-input" placeholder="Your email address">
+      <button class="nl-btn">Subscribe to The Asia Letter →</button>
+      <p class="nl-fine">No spam · Free forever · Unsubscribe anytime</p>
+    </div>
+  </div>
+</div>
+{{ end }}

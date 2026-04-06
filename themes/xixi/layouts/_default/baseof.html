@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .IsHome }}XIXI — Asia's Culture, Commerce, Creators, Capital{{ else }}{{ .Title }} — XIXI{{ end }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/xixi.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+{{ partial "nav.html" . }}
+{{ partial "ticker.html" . }}
+<main>{{ block "main" . }}{{ end }}</main>
+{{ partial "footer.html" . }}
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", u => {
+    if (!u) window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+  });
+}
+const obs = new IntersectionObserver(es => {
+  es.forEach((e,i) => { if(e.isIntersecting) setTimeout(()=>e.target.classList.add('in'),i*100); });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

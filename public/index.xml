@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XIXI</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on XIXI</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Apr 2026 09:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seoul Is the New Milan: Inside the K-Fashion Takeover Reshaping Global Runways</title>
+      <link>http://localhost:1313/articles/seoul-is-the-new-milan/</link>
+      <pubDate>Mon, 06 Apr 2026 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/articles/seoul-is-the-new-milan/</guid>
+      <description>&lt;p&gt;For decades, the global fashion calendar has been dictated by four cities: New York, London, Milan, Paris. The axis was fixed. The hierarchy was understood. Then Seoul happened.&lt;/p&gt;&#xA;&lt;p&gt;What began as a cultural export — K-Pop, K-Beauty, K-Drama — has mutated into something more structural. Korean fashion is no longer a trend Western editors parachute into for a season. It is a gravitational force with its own orbit, its own logic, and increasingly, its own rules.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

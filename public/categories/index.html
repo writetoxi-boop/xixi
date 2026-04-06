@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Categories — XIXI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/xixi.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <a href="/articles/">Stories</a>
+    <a href="/newsletter/">The Asia Letter</a>
+  </div>
+  <a href="/" class="nav-logo">XIXI<span class="sd">●</span></a>
+  <div class="nav-right">
+    <a href="/about/">About</a>
+    <a href="/advertise/">Partner</a>
+    <a href="/newsletter/" class="nav-sub">Subscribe</a>
+  </div>
+</nav>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Fashion</span><span class="ticker-item">Art</span><span class="ticker-item">Culture</span><span class="ticker-item">Capital</span><span class="ticker-item">Power</span><span class="ticker-item accent">The Asia Letter — Weekly</span><span class="ticker-item">Seoul</span><span class="ticker-item">Tokyo</span><span class="ticker-item">Singapore</span><span class="ticker-item">Jakarta</span><span class="ticker-item">Shanghai</span><span class="ticker-item accent">Asia's culture, commerce, creators, capital</span><span class="ticker-item">Fashion</span><span class="ticker-item">Art</span><span class="ticker-item">Culture</span><span class="ticker-item">Capital</span><span class="ticker-item">Power</span><span class="ticker-item accent">The Asia Letter — Weekly</span><span class="ticker-item">Seoul</span><span class="ticker-item">Tokyo</span><span class="ticker-item">Singapore</span><span class="ticker-item">Jakarta</span><span class="ticker-item">Shanghai</span><span class="ticker-item accent">Asia's culture, commerce, creators, capital</span>
+  </div>
+</div>
+
+<main>
+<div class="page-head">
+  <h1>All<br><em>Stories.</em></h1>
+  <div class="page-head-right">
+    <p>Every story we publish is a lens on the forces shaping Asian culture, commerce, and power.</p>
+    <p class="story-count">0 stories</p>
+  </div>
+</div>
+
+<div class="filter-row">
+  <button class="f-btn on" data-f="all">All</button>
+  <button class="f-btn" data-f="fashion">Fashion</button>
+  <button class="f-btn" data-f="art">Art</button>
+  <button class="f-btn" data-f="culture">Culture</button>
+  <button class="f-btn" data-f="capital">Capital</button>
+  <button class="f-btn" data-f="power">Power</button>
+</div>
+
+<div class="list-wrap">
+  
+</div>
+
+<script>
+document.querySelectorAll('.f-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    const f = btn.dataset.f;
+    let n = 0;
+    document.querySelectorAll('.a-row').forEach(row => {
+      const show = f === 'all' || row.dataset.cat === f;
+      row.classList.toggle('gone', !show);
+      if (show) { n++; row.querySelector('.a-num').textContent = String(n).padStart(2,'0'); }
+    });
+  });
+});
+</script>
+</main>
+<footer>
+  <div class="f-brand">
+    <a href="/" class="f-logo">XIXI</a>
+    <p>Asia's culture, commerce, creators, and capital — through a global lens.</p>
+  </div>
+  <div class="f-col">
+    <h4>Verticals</h4>
+    <ul>
+      <li><a href="/articles/?cat=fashion">Fashion</a></li>
+      <li><a href="/articles/?cat=art">Art</a></li>
+      <li><a href="/articles/?cat=culture">Culture</a></li>
+      <li><a href="/articles/?cat=capital">Capital</a></li>
+      <li><a href="/articles/?cat=power">Power</a></li>
+    </ul>
+  </div>
+  <div class="f-col">
+    <h4>Company</h4>
+    <ul>
+      <li><a href="/about/">About XIXI</a></li>
+      <li><a href="/newsletter/">The Asia Letter</a></li>
+      <li><a href="/advertise/">Partner</a></li>
+    </ul>
+  </div>
+  <div class="f-col">
+    <h4>Follow</h4>
+    <ul>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">TikTok</a></li>
+      <li><a href="#">X / Twitter</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="f-bottom">
+  <p>© 2026 XIXI Media · Part of Shibuya Holdings</p>
+  <div class="f-social">
+    <a href="#">Instagram</a>
+    <a href="#">TikTok</a>
+    <a href="#">X</a>
+  </div>
+</div>
+
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", u => {
+    if (!u) window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+  });
+}
+const obs = new IntersectionObserver(es => {
+  es.forEach((e,i) => { if(e.isIntersecting) setTimeout(()=>e.target.classList.add('in'),i*100); });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

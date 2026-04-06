@@ -1,0 +1,52 @@
+{{ define "main" }}
+<div class="page-head">
+  <h1>All<br><em>Stories.</em></h1>
+  <div class="page-head-right">
+    <p>Every story we publish is a lens on the forces shaping Asian culture, commerce, and power.</p>
+    <p class="story-count">{{ len .Pages }} stories</p>
+  </div>
+</div>
+
+<div class="filter-row">
+  <button class="f-btn on" data-f="all">All</button>
+  <button class="f-btn" data-f="fashion">Fashion</button>
+  <button class="f-btn" data-f="art">Art</button>
+  <button class="f-btn" data-f="culture">Culture</button>
+  <button class="f-btn" data-f="capital">Capital</button>
+  <button class="f-btn" data-f="power">Power</button>
+</div>
+
+<div class="list-wrap">
+  {{ range $i, $page := .Pages.ByDate.Reverse }}
+  <a class="a-row" data-cat="{{ $page.Params.category }}" href="{{ $page.Permalink }}">
+    <div class="a-num">{{ printf "%02d" (add $i 1) }}</div>
+    <div class="a-body">
+      <div class="a-tag">{{ $page.Params.category | title }}</div>
+      <h2 class="a-row-title">{{ $page.Title }}</h2>
+      <p class="a-excerpt">{{ $page.Params.excerpt }}</p>
+    </div>
+    <div class="a-aside">
+      <span class="a-author">{{ $page.Params.author }}</span>
+      <span class="a-when">{{ $page.Date.Format "2 Jan 2006" }}</span>
+      <span class="a-rt">{{ $page.Params.read_time }}</span>
+    </div>
+  </a>
+  {{ end }}
+</div>
+
+<script>
+document.querySelectorAll('.f-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    const f = btn.dataset.f;
+    let n = 0;
+    document.querySelectorAll('.a-row').forEach(row => {
+      const show = f === 'all' || row.dataset.cat === f;
+      row.classList.toggle('gone', !show);
+      if (show) { n++; row.querySelector('.a-num').textContent = String(n).padStart(2,'0'); }
+    });
+  });
+});
+</script>
+{{ end }}

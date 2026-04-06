@@ -1,0 +1,13 @@
+baseURL = "https://xixithemagazine.com"
+languageCode = "en-us"
+title = "XIXI"
+theme = "xixi"
+paginate = 12
+
+[params]
+  description = "Asia's culture, commerce, creators, capital"
+  tagline = "The World Is Looking East"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
