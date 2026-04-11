@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div style="margin-top:68px;padding:96px 48px 72px;border-bottom:1px solid var(--rule);">
+  <div style="font-family:'Cormorant SC',serif;font-size:0.7rem;letter-spacing:0.28em;color:var(--ink4);display:flex;align-items:center;gap:14px;margin-bottom:44px;"><span style="width:24px;height:1px;background:var(--seal);display:block;"></span>Brand Partnerships</div>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(4rem,8vw,10rem);font-weight:900;line-height:0.9;letter-spacing:-0.02em;margin-bottom:48px;">Reach Asia's<br><em style="color:var(--seal);">Tastemakers.</em></h1>
+  <div style="display:grid;grid-template-columns:repeat(3,auto) 1fr;gap:60px;align-items:end;">
+    <div style="border-top:1px solid var(--rule);padding-top:18px;"><span style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--ink);display:block;line-height:1;">80K+</span><span style="font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--ink4);">Monthly Reach</span></div>
+    <div style="border-top:1px solid var(--rule);padding-top:18px;"><span style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--ink);display:block;line-height:1;">12K+</span><span style="font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--ink4);">Newsletter Subs</span></div>
+    <div style="border-top:1px solid var(--rule);padding-top:18px;"><span style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--ink);display:block;line-height:1;">48%</span><span style="font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--ink4);">Open Rate</span></div>
+    <p style="font-size:0.98rem;color:var(--ink3);font-weight:300;line-height:1.75;">XIXI connects premium and luxury brands with the Gen Z and millennial Asian audience that controls global cultural taste.</p>
+  </div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule);">
+  <div style="padding:80px 60px;border-right:1px solid var(--rule);">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,5.5rem);font-weight:900;line-height:0.95;margin-bottom:24px;letter-spacing:-0.01em;">Let's Build<br><em style="color:var(--seal);">Something.</em></h2>
+    <p style="font-size:0.97rem;color:var(--ink3);font-weight:300;line-height:1.75;max-width:360px;margin-bottom:40px;">Tell us who you are, what you're building, and who you want to reach. We'll come back with ideas — not rate cards.</p>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="display:flex;gap:16px;align-items:center;"><span style="font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--ink4);width:80px;">Email</span><span style="font-size:0.95rem;">partners@xixithemagazine.com</span></div>
+      <div style="display:flex;gap:16px;align-items:center;"><span style="font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--ink4);width:80px;">Based</span><span style="font-size:0.95rem;">Singapore</span></div>
+      <div style="display:flex;gap:16px;align-items:center;"><span style="font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--ink4);width:80px;">Response</span><span style="font-size:0.95rem;">Within 48 hours</span></div>
+    </div>
+  </div>
+  <div style="padding:80px 60px;">
+    <div id="contactForm" style="display:flex;flex-direction:column;gap:20px;">
+      <input type="text" style="background:transparent;border:none;border-bottom:1px solid var(--rule);color:var(--ink);padding:10px 0;font-family:'Cormorant',serif;font-size:1rem;outline:none;width:100%;transition:border-color 0.2s;" placeholder="Your name" onfocus="this.style.borderBottomColor='var(--seal)'" onblur="this.style.borderBottomColor='var(--rule)'">
+      <input type="email" style="background:transparent;border:none;border-bottom:1px solid var(--rule);color:var(--ink);padding:10px 0;font-family:'Cormorant',serif;font-size:1rem;outline:none;width:100%;transition:border-color 0.2s;" placeholder="Email address" onfocus="this.style.borderBottomColor='var(--seal)'" onblur="this.style.borderBottomColor='var(--rule)'">
+      <input type="text" style="background:transparent;border:none;border-bottom:1px solid var(--rule);color:var(--ink);padding:10px 0;font-family:'Cormorant',serif;font-size:1rem;outline:none;width:100%;transition:border-color 0.2s;" placeholder="Brand / Company" onfocus="this.style.borderBottomColor='var(--seal)'" onblur="this.style.borderBottomColor='var(--rule)'">
+      <textarea style="background:transparent;border:none;border-bottom:1px solid var(--rule);color:var(--ink);padding:10px 0;font-family:'Cormorant',serif;font-size:1rem;outline:none;width:100%;resize:vertical;min-height:100px;transition:border-color 0.2s;" placeholder="Tell us about your brief..." onfocus="this.style.borderBottomColor='var(--seal)'" onblur="this.style.borderBottomColor='var(--rule)'"></textarea>
+      <button onclick="document.getElementById('contactForm').style.display='none';document.getElementById('successMsg').style.display='block';" style="background:var(--ink);color:var(--paper);border:none;padding:16px 28px;font-family:'Cormorant SC',serif;font-size:0.72rem;letter-spacing:0.2em;cursor:pointer;transition:background 0.2s;text-align:left;" onmouseover="this.style.background='var(--seal)'" onmouseout="this.style.background='var(--ink)'">Send Enquiry →</button>
+    </div>
+    <div id="successMsg" style="display:none;padding:60px 20px;text-align:center;">
+      <div style="font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;margin-bottom:12px;">Enquiry Received ✦</div>
+      <p style="font-size:0.95rem;color:var(--ink3);font-weight:300;">We'll be in touch within 48 hours.</p>
+    </div>
+  </div>
+</div>
+{{ end }}

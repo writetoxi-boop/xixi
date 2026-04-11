@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="hero" style="margin-top:68px;">
+  <div class="hero-left">
+    <div class="hero-kicker">Free Weekly Newsletter</div>
+    <div class="hero-headline"><h1>The Asia<br><em>Letter.</em></h1></div>
+    <div class="hero-bottom">
+      <p class="hero-desc">Culture. Commerce. Creators. Capital. Every week — curated for the globally curious.</p>
+      <div class="nl-stats" style="margin-top:32px;">
+        <div class="nl-stat"><span>12K+</span><span>Subscribers</span></div>
+        <div class="nl-stat"><span>48%</span><span>Open Rate</span></div>
+        <div class="nl-stat"><span>Free</span><span>Always</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right" style="background:var(--ink);display:flex;flex-direction:column;justify-content:center;padding:64px 52px;">
+    <div id="formWrap">
+      <p style="font-family:'Cormorant SC',serif;font-size:0.68rem;letter-spacing:0.22em;color:var(--ink4);margin-bottom:20px;">Join the readers</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;line-height:1.2;margin-bottom:12px;font-style:italic;color:var(--paper);">Your weekly briefing on Asian culture, commerce and power.</h2>
+      <p style="font-size:0.87rem;color:var(--ink4);font-weight:300;line-height:1.65;margin-bottom:32px;">No noise. No filler. Just the moves that matter — every Thursday.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <input type="email" class="nl-input" placeholder="Your email address" style="background:rgba(247,243,238,0.1);border-bottom-color:rgba(247,243,238,0.3);color:var(--paper);">
+        <button class="nl-btn" onclick="doSignup()">Subscribe to The Asia Letter →</button>
+        <p class="nl-fine">Free forever · No spam · Unsubscribe anytime</p>
+      </div>
+    </div>
+    <div id="successBox" style="display:none;text-align:center;padding:60px 20px;">
+      <div style="font-size:2rem;color:var(--seal);margin-bottom:16px;">✦</div>
+      <div style="font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;color:var(--paper);margin-bottom:12px;">You're In.</div>
+      <p style="font-size:0.95rem;color:var(--ink4);font-weight:300;">Welcome to The Asia Letter. Your first issue lands Thursday.</p>
+    </div>
+  </div>
+</div>
+<script>function doSignup(){document.getElementById('formWrap').style.display='none';document.getElementById('successBox').style.display='block';}</script>
+{{ end }}
