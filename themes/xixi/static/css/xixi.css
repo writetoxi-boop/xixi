@@ -265,3 +265,17 @@ footer{border-top:1px solid var(--rule);padding:64px 48px 48px;display:grid;grid
 .nl-btn:hover {
   background: #8B2215 !important;
 }
+
+/* Match exact brick red from brand */
+.nl-left {
+  background: #9B2D1F !important;
+}
+.nl-band {
+  border-color: #9B2D1F !important;
+}
+.nl-btn {
+  background: #9B2D1F !important;
+}
+.nl-btn:hover {
+  background: #7A2218 !important;
+}
