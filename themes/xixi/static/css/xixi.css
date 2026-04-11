@@ -202,3 +202,11 @@ footer{border-top:1px solid var(--rule);padding:64px 48px 48px;display:grid;grid
 .a-card-img-sm[style*="url('')"] {
   display: none !important;
 }
+
+/* Remove grey background from empty card area */
+.grid-main, .grid-secondary {
+  background: transparent !important;
+}
+.a-card {
+  border: 1px solid var(--rule) !important;
+}
