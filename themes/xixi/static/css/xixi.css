@@ -210,3 +210,12 @@ footer{border-top:1px solid var(--rule);padding:64px 48px 48px;display:grid;grid
 .a-card {
   border: 1px solid var(--rule) !important;
 }
+
+/* Equal height grid - lead card no longer spans 2 rows */
+.a-card.lead {
+  grid-row: span 1 !important;
+  min-height: 280px !important;
+}
+.grid-main {
+  grid-template-rows: auto !important;
+}
