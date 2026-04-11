@@ -225,7 +225,7 @@ footer{border-top:1px solid var(--rule);padding:64px 48px 48px;display:grid;grid
   border-color: var(--seal) !important;
 }
 .nl-left {
-  background: var(--seal) !important;
+  background: #521309 !important;
   border-right-color: var(--seal) !important;
 }
 .nl-kicker {
@@ -253,7 +253,7 @@ footer{border-top:1px solid var(--rule);padding:64px 48px 48px;display:grid;grid
 
 
 .nl-left {
-  background: #8B2215 !important;
+  background: #521309 !important;
 }
 .nl-band {
   border-color: #8B2215 !important;
@@ -268,7 +268,7 @@ footer{border-top:1px solid var(--rule);padding:64px 48px 48px;display:grid;grid
 
 
 .nl-left {
-  background: #9B2D1F !important;
+  background: #521309 !important;
 }
 .nl-band {
   border-color: #9B2D1F !important;
@@ -281,7 +281,7 @@ footer{border-top:1px solid var(--rule);padding:64px 48px 48px;display:grid;grid
 }
 
 /* Newsletter final colours */
-.nl-left { background: #C8412A !important; border-right-color: #C8412A !important; }
+.nl-left { background: #521309 !important; border-right-color: #C8412A !important; }
 .nl-band { border-color: #C8412A !important; }
 .nl-kicker, .nl-kicker::before { color: rgba(247,243,238,0.75) !important; background: rgba(247,243,238,0.5) !important; }
 .nl-title, .nl-title em { color: #F7F3EE !important; opacity: 1 !important; }
@@ -290,3 +290,9 @@ footer{border-top:1px solid var(--rule);padding:64px 48px 48px;display:grid;grid
 .nl-stat span:last-child { color: rgba(247,243,238,0.65) !important; }
 .nl-btn { background: #1A1714 !important; color: #F7F3EE !important; }
 .nl-btn:hover { background: #C8412A !important; }
+
+/* Force correct brand red */
+.nl-left { background: #521309 !important; }
+.nl-band { border-color: #521309 !important; }
+.nl-btn { background: #521309 !important; }
+.nl-btn:hover { background: #3a0d06 !important; }
