@@ -7,7 +7,7 @@ read_time: 6 MIN
 excerpt: South Koreans spend an average of $325 per capita on personal luxury
   goods annually — the highest figure on the planet. The reasons behind it are
   more interesting than you think.
-image: /uploads/107176328-1673338304060-gettyimages-1237238328-skorea_shopping.webp
+image: ""
 featured: true
 ---
 The statistic lands differently depending on where you encounter it.

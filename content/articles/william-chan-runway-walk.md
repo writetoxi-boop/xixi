@@ -6,7 +6,7 @@ author: Veronica
 read_time: 5 MIN
 excerpt: Chinese actor William Chan became the first Asian celebrity to walk the
   Zegna runway
-image: /uploads/william-chan_zegna-winter-2026-fashion-show-400x600.jpg
+image: ""
 featured: false
 ---
 The fashion industry has a complicated relationship with firsts. On one hand, it celebrates them — the first this, the first that, the barrier broken, the ceiling shattered. On the other, it reveals how long the barrier stood. How many seasons passed. How many collections were cast without asking the question at all.

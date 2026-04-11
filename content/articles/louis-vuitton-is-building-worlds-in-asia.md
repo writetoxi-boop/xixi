@@ -7,7 +7,7 @@ read_time: 6 MIN
 excerpt: A six-storey cultural complex in Seoul. An intimate private salon in
   Singapore. An art-led boutique in Tokyo. Louis Vuitton isn't selling bags in
   Asia anymore. It's selling belonging.
-image: /uploads/news-p.v1.20251130.03cfebd458744e838d19773ed4bd42cb_p1.jpg
+image: ""
 featured: true
 ---
 There is a scene playing out across Asia's luxury capitals that tells you everything about where the industry is heading. It does not take place in a store.

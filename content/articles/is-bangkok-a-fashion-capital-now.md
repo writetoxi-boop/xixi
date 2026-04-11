@@ -6,7 +6,7 @@ author: Veronica
 read_time: 5 MIN
 excerpt: "Chanel, Gucci, Versace have all chosen Bangkok for major activations.
   The city's designers are finding global audiences. "
-image: /uploads/outside_emsphere_mall_bangkok.webp
+image: ""
 featured: false
 ---
 Bangkok has always been easy to underestimate. It is too hot, too chaotic, too everything — too much colour, too much noise, too much happening at street level to be mistaken for a city with European composure. The fashion industry, which has historically preferred its capitals with a certain Haussmannian order, took a long time to notice.

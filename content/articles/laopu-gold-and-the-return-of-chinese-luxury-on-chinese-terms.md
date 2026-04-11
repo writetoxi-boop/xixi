@@ -7,7 +7,7 @@ read_time: 8 MIN
 excerpt: "While Western luxury brands navigate China's softening market,
   heritage-gold brands like Laopu Gold are posting soaring profits. The lesson
   is not about gold. "
-image: /uploads/e35e1580f6a943365c1fcae7fcce09d5f85f76748aa8d3945c36310945b68c0f.webp
+image: ""
 featured: true
 ---
 In the middle of one of the most difficult years for Western luxury in China, a category of brands barely known outside the country was posting extraordinary growth.

@@ -7,7 +7,7 @@ read_time: 5 MIN
 excerpt: "Rakuten Fashion Week 2026 didn't just showcase Japanese designers. It
   quietly confirmed what insiders have known for years: Tokyo operates by rules
   no other fashion city has written yet."
-image: /uploads/26ss_day3.jpg
+image: ""
 featured: false
 ---
 Fashion has always had four capitals. The quartet — New York, London, Milan, Paris — has governed the global calendar for so long that challenging it felt less like ambition and more like category error. You didn't replace the four cities. You aspired to be recognised by them.

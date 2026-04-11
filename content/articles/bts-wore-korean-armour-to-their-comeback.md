@@ -7,7 +7,7 @@ read_time: 6 MIN
 excerpt: When all seven members of BTS took the stage at Gwanghwamun Square in
   custom Jay Songzio, it wasn't just a comeback. It was a statement about who
   gets to define luxury now.
-image: /uploads/bts-concert_2026_03_21_21_47_24.jpg
+image: ""
 featured: true
 ---
 There is a version of this story where BTS wears Gucci. Or Dior. Or any of the European houses that have spent the last decade courting K-Pop's cultural capital while giving its designers nothing in return.
