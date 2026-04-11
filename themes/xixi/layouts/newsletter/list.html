@@ -17,11 +17,13 @@
       <p style="font-family:'Cormorant SC',serif;font-size:0.68rem;letter-spacing:0.22em;color:var(--ink4);margin-bottom:20px;">Join the readers</p>
       <h2 style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;line-height:1.2;margin-bottom:12px;font-style:italic;color:var(--paper);">Your weekly briefing on Asian culture, commerce and power.</h2>
       <p style="font-size:0.87rem;color:var(--ink4);font-weight:300;line-height:1.65;margin-bottom:32px;">No noise. No filler. Just the moves that matter — every Thursday.</p>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <input type="email" class="nl-input" placeholder="Your email address" style="background:rgba(247,243,238,0.1);border-bottom-color:rgba(247,243,238,0.3);color:var(--paper);">
-        <button class="nl-btn" onclick="doSignup()">Subscribe to The Asia Letter →</button>
-        <p class="nl-fine">Free forever · No spam · Unsubscribe anytime</p>
-      </div>
+      <form name="newsletter" method="POST" data-netlify="true" style="display:flex;flex-direction:column;gap:12px;" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="newsletter">
+        <input type="text" name="name" style="background:rgba(247,243,238,0.08);border:none;border-bottom:1px solid rgba(247,243,238,0.2);color:var(--paper);padding:14px 0;font-family:'Cormorant',serif;font-size:1rem;outline:none;width:100%;" placeholder="Your name">
+        <input type="email" name="email" required style="background:rgba(247,243,238,0.08);border:none;border-bottom:1px solid rgba(247,243,238,0.2);color:var(--paper);padding:14px 0;font-family:'Cormorant',serif;font-size:1rem;outline:none;width:100%;" placeholder="Your email address">
+        <button type="submit" style="background:var(--seal);color:var(--paper);border:none;padding:16px 28px;font-family:'Cormorant SC',serif;font-size:0.72rem;letter-spacing:0.2em;cursor:pointer;margin-top:6px;text-align:left;">Subscribe to The Asia Letter →</button>
+        <p style="font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.12em;color:var(--ink4);">Free forever · No spam · Unsubscribe anytime</p>
+      </form>
     </div>
     <div id="successBox" style="display:none;text-align:center;padding:60px 20px;">
       <div style="font-size:2rem;color:var(--seal);margin-bottom:16px;">✦</div>
@@ -30,5 +32,21 @@
     </div>
   </div>
 </div>
-<script>function doSignup(){document.getElementById('formWrap').style.display='none';document.getElementById('successBox').style.display='block';}</script>
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(new FormData(form)).toString()
+  }).then(() => {
+    document.getElementById('formWrap').style.display = 'none';
+    document.getElementById('successBox').style.display = 'block';
+  }).catch(() => {
+    document.getElementById('formWrap').style.display = 'none';
+    document.getElementById('successBox').style.display = 'block';
+  });
+}
+</script>
 {{ end }}
