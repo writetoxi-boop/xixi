@@ -219,3 +219,34 @@ footer{border-top:1px solid var(--rule);padding:64px 48px 48px;display:grid;grid
 .grid-main {
   grid-template-rows: auto !important;
 }
+
+/* Newsletter band - red left column */
+.nl-band {
+  border-color: var(--seal) !important;
+}
+.nl-left {
+  background: var(--seal) !important;
+  border-right-color: var(--seal) !important;
+}
+.nl-kicker {
+  color: rgba(247,243,238,0.7) !important;
+}
+.nl-kicker::before {
+  background: rgba(247,243,238,0.5) !important;
+}
+.nl-title {
+  color: var(--paper) !important;
+}
+.nl-title em {
+  color: var(--paper) !important;
+  opacity: 0.85;
+}
+.nl-desc {
+  color: rgba(247,243,238,0.8) !important;
+}
+.nl-stat span:first-child {
+  color: var(--paper) !important;
+}
+.nl-stat span:last-child {
+  color: rgba(247,243,238,0.6) !important;
+}
