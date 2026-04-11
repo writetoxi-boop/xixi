@@ -250,3 +250,18 @@ footer{border-top:1px solid var(--rule);padding:64px 48px 48px;display:grid;grid
 .nl-stat span:last-child {
   color: rgba(247,243,238,0.6) !important;
 }
+
+/* Fix newsletter colours */
+.nl-left {
+  background: #8B2215 !important;
+}
+.nl-band {
+  border-color: #8B2215 !important;
+}
+.nl-btn {
+  background: var(--seal) !important;
+  color: var(--paper) !important;
+}
+.nl-btn:hover {
+  background: #8B2215 !important;
+}
