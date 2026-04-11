@@ -15,19 +15,17 @@
   </div>
   <div class="hero-right">
     {{ $featured := where (where .Site.RegularPages "Section" "articles") ".Params.featured" true }}
-    {{ if $featured }}
-      {{ with index $featured 0 }}
-      <a href="{{ .Permalink }}" class="hero-cover">
-        <div class="cover-visual"></div>
-        <div class="seal-stamp"><span>XIXI</span></div>
-        <div class="cover-content">
-          <div class="cover-tag">Cover Story</div>
-          <h2 class="cover-title">{{ .Title }}</h2>
-          <p class="cover-meta">{{ .Params.author }} · {{ .Params.category | title }} · {{ .Params.read_time }}</p>
-        </div>
-      </a>
-      {{ end }}
-    {{ else }}
+    {{ if $featured }}{{ with index $featured 0 }}
+    <a href="{{ .Permalink }}" class="hero-cover">
+      <div class="cover-visual"></div>
+      <div class="seal-stamp"><span>XIXI</span></div>
+      <div class="cover-content">
+        <div class="cover-tag">Cover Story</div>
+        <h2 class="cover-title">{{ .Title }}</h2>
+        <p class="cover-meta">{{ .Params.author }} · {{ .Params.category | title }} · {{ .Params.read_time }}</p>
+      </div>
+    </a>
+    {{ end }}{{ else }}
     <a href="/articles/" class="hero-cover">
       <div class="cover-visual"></div>
       <div class="seal-stamp"><span>XIXI</span></div>
@@ -60,7 +58,7 @@
 <div class="grid-main reveal">
   {{ range first 1 $articles }}
   <a class="a-card lead" href="{{ .Permalink }}">
-    {{ if .Params.image }}<div class="a-card-img" style="background-image:url('{{ .Params.image }}')"></div>{{ end }}
+    {{ with .Params.image }}<div class="a-card-img" style="background-image:url('{{ . }}')"></div>{{ end }}
     <div>
       <div class="a-tag">{{ .Params.category | title }}</div>
       <h2 class="a-title">{{ .Title }}</h2>
@@ -74,7 +72,7 @@
   {{ end }}
   {{ range after 1 (first 3 $articles) }}
   <a class="a-card" href="{{ .Permalink }}">
-    {{ if .Params.image }}<div class="a-card-img-sm" style="background-image:url('{{ .Params.image }}')"></div>{{ end }}
+    {{ with .Params.image }}<div class="a-card-img-sm" style="background-image:url('{{ . }}')"></div>{{ end }}
     <div>
       <div class="a-tag">{{ .Params.category | title }}</div>
       <h2 class="a-title">{{ .Title }}</h2>
@@ -90,7 +88,7 @@
 <div class="grid-secondary reveal">
   {{ range after 3 (first 6 $articles) }}
   <a class="a-card" href="{{ .Permalink }}">
-    {{ if .Params.image }}<div class="a-card-img-sm" style="background-image:url('{{ .Params.image }}')"></div>{{ end }}
+    {{ with .Params.image }}<div class="a-card-img-sm" style="background-image:url('{{ . }}')"></div>{{ end }}
     <div>
       <div class="a-tag">{{ .Params.category | title }}</div>
       <h2 class="a-title">{{ .Title }}</h2>

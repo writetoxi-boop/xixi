@@ -192,3 +192,13 @@ footer{border-top:1px solid var(--rule);padding:64px 48px 48px;display:grid;grid
 
 /* Fix empty grey box when no image */
 .a-card-img:empty, .a-card-img-sm:empty { display: none; }
+
+/* Hide image containers that fail to load */
+.a-card-img, .a-card-img-sm {
+  background-color: transparent !important;
+  min-height: 0;
+}
+.a-card-img[style*="url('')"],
+.a-card-img-sm[style*="url('')"] {
+  display: none !important;
+}
