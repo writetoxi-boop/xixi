@@ -60,6 +60,7 @@
 <div class="grid-main reveal">
   {{ range first 1 $articles }}
   <a class="a-card lead" href="{{ .Permalink }}">
+    {{ if .Params.image }}<div class="a-card-img" style="background-image:url('{{ .Params.image }}')"></div>{{ end }}
     <div>
       <div class="a-tag">{{ .Params.category | title }}</div>
       <h2 class="a-title">{{ .Title }}</h2>
@@ -73,6 +74,7 @@
   {{ end }}
   {{ range after 1 (first 3 $articles) }}
   <a class="a-card" href="{{ .Permalink }}">
+    {{ if .Params.image }}<div class="a-card-img-sm" style="background-image:url('{{ .Params.image }}')"></div>{{ end }}
     <div>
       <div class="a-tag">{{ .Params.category | title }}</div>
       <h2 class="a-title">{{ .Title }}</h2>
@@ -88,6 +90,7 @@
 <div class="grid-secondary reveal">
   {{ range after 3 (first 6 $articles) }}
   <a class="a-card" href="{{ .Permalink }}">
+    {{ if .Params.image }}<div class="a-card-img-sm" style="background-image:url('{{ .Params.image }}')"></div>{{ end }}
     <div>
       <div class="a-tag">{{ .Params.category | title }}</div>
       <h2 class="a-title">{{ .Title }}</h2>
@@ -115,7 +118,7 @@
   <div class="nl-right">
     <div class="nl-form">
       <input type="email" class="nl-input" placeholder="Your email address">
-      <button class="nl-btn">Subscribe to The Asia Letter →</button>
+      <button class="nl-btn" onclick="window.open('https://xixithemagazine.beehiiv.com/subscribe','_blank')">Subscribe to The Asia Letter →</button>
       <p class="nl-fine">No spam · Free forever · Unsubscribe anytime</p>
     </div>
   </div>

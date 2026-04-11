@@ -139,3 +139,56 @@ footer{border-top:1px solid var(--rule);padding:64px 48px 48px;display:grid;grid
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.8s ease,transform 0.8s ease;}
 .reveal.in{opacity:1;transform:translateY(0);}
 @media(max-width:900px){nav{padding:0 20px;grid-template-columns:1fr auto;}.nav-left,.nav-right{display:none;}.hero{grid-template-columns:1fr;}.hero-left{padding:48px 24px;border-right:none;border-bottom:1px solid var(--rule);}.hero-right{min-height:60vw;}.verticals{grid-template-columns:repeat(3,1fr);}.grid-main{grid-template-columns:1fr;margin:0 20px;}.grid-secondary{grid-template-columns:1fr;margin:0 20px;}.a-card.lead{grid-row:span 1;min-height:280px;}.section-head{padding:40px 20px 24px;}.nl-band{grid-template-columns:1fr;margin:40px 20px;}.nl-left{border-right:none;border-bottom:1px solid var(--ink);padding:40px 28px;}.nl-right{padding:40px 28px;}footer{grid-template-columns:1fr 1fr;padding:48px 20px;}.f-bottom{padding:20px;}.divider{margin:48px 20px 0;}.page-head{grid-template-columns:1fr;padding:60px 20px 40px;}.filter-row{padding:0 20px;}.list-wrap{padding:0 20px 64px;}.a-row{grid-template-columns:1fr;gap:12px;}.a-aside{text-align:left;}.article-wrap{padding:100px 24px 64px;}}
+
+/* ── ARTICLE CARD IMAGE PREVIEWS ── */
+.a-card-img {
+  width: calc(100% + 64px);
+  margin: -36px -32px 20px;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--paper2);
+}
+.a-card.lead .a-card-img {
+  height: 280px;
+}
+.a-card-img-sm {
+  width: calc(100% + 64px);
+  margin: -36px -32px 20px;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--paper2);
+}
+
+/* ── IMPROVED TYPOGRAPHY ── */
+.a-title {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+}
+.a-card.lead .a-title {
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem) !important;
+}
+.a-tag {
+  font-size: 0.68rem !important;
+  letter-spacing: 0.22em !important;
+  margin-bottom: 10px !important;
+}
+.a-excerpt {
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+}
+.a-meta {
+  font-size: 0.68rem !important;
+}
+.a-row-title {
+  font-size: clamp(1.3rem, 2vw, 1.8rem) !important;
+}
+.a-num {
+  font-size: 4rem !important;
+}
+
+/* Fix empty grey box when no image */
+.a-card-img:empty, .a-card-img-sm:empty { display: none; }
