@@ -1,4 +1,5 @@
 ---
+image: "/uploads/e35e1580f6a943365c1fcae7fcce09d5f85f76748aa8d3945c36310945b68c0f.webp"
 title: The Quiet Luxury Codes That Only Asians Understand
 date: 2026-04-07T05:52:21.401Z
 categories: ["culture"]

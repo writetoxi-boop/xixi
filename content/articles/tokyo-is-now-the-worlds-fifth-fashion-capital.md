@@ -1,13 +1,13 @@
 ---
 title: Tokyo Is Now the World's Fifth Fashion Capital
 date: 2026-04-07T02:11:15.129Z
-categories: ["capital"]
+categories: ["fashion"]
 author: Veronica
 read_time: 5 MIN
 excerpt: "Rakuten Fashion Week 2026 didn't just showcase Japanese designers. It
   quietly confirmed what insiders have known for years: Tokyo operates by rules
   no other fashion city has written yet."
-image: ""
+image: "/uploads/26ss_day5.jpg"
 featured: false
 ---
 Fashion has always had four capitals. The quartet — New York, London, Milan, Paris — has governed the global calendar for so long that challenging it felt less like ambition and more like category error. You didn't replace the four cities. You aspired to be recognised by them.

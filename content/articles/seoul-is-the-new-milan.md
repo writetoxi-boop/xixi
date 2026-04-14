@@ -1,4 +1,5 @@
 ---
+image: "/uploads/26ss_day3.jpg"
 title: "Seoul Is the New Milan: Inside the K-Fashion Takeover Reshaping Global Runways"
 date: 2026-04-06T09:00:00.000Z
 categories: ["fashion"]
