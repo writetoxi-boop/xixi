@@ -11,14 +11,14 @@
     <a href="/capital">Capital</a>
     <a href="/power">Power</a>
   </div>
-  <a href="/" class="nav-logo">XIXI</a>
+  <a href="/" class="nav-logo">XIXI<em> 囍</em></a>
   <div class="nav-right">
     <a href="/about">About</a>
     <a href="/newsletter" class="btn-subscribe">Subscribe</a>
   </div>
 </nav>
 <div class="category-strip">
-  <a href="/">All</a>
+  <a href="/" class="active">All</a>
   <a href="/fashion">Street Style</a>
   <a href="/culture">Culture</a>
   <a href="/art">Art</a>

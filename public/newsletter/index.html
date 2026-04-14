@@ -3,7 +3,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tags — XIXI</title>
+<title>The Asia Letter — XIXI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/xixi.css">
@@ -42,41 +42,47 @@
 </div>
 
 <main>
-<div class="page-head">
-  <h1>All<br><em>Stories.</em></h1>
-  <div class="page-head-right">
-    <p>Every story we publish is a lens on the forces shaping Asian culture, commerce, and power.</p>
-    <p class="story-count">0 stories</p>
+<div class="hero" style="margin-top:68px;">
+  <div class="hero-left">
+    <div class="hero-kicker">Free Weekly Newsletter</div>
+    <div class="hero-headline"><h1>The Asia<br><em>Letter.</em></h1></div>
+    <div class="hero-bottom">
+      <p class="hero-desc">Culture. Commerce. Creators. Capital. Every week — curated for the globally curious.</p>
+      <div class="nl-stats" style="margin-top:32px;">
+        <div class="nl-stat"><span>12K+</span><span>Subscribers</span></div>
+        <div class="nl-stat"><span>48%</span><span>Open Rate</span></div>
+        <div class="nl-stat"><span>Free</span><span>Always</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right" style="background:var(--ink);display:flex;flex-direction:column;justify-content:center;padding:64px 52px;">
+    <div id="formWrap">
+      <p style="font-family:'Cormorant SC',serif;font-size:0.68rem;letter-spacing:0.22em;color:var(--ink4);margin-bottom:20px;">Join the readers</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;line-height:1.2;margin-bottom:12px;font-style:italic;color:var(--paper);">Your weekly briefing on Asian culture, commerce and power.</h2>
+      <p style="font-size:0.87rem;color:var(--ink4);font-weight:300;line-height:1.65;margin-bottom:32px;">No noise. No filler. Just the moves that matter — every Thursday.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <input type="email" id="emailInput" style="background:rgba(247,243,238,0.08);border:none;border-bottom:1px solid rgba(247,243,238,0.2);color:var(--paper);padding:14px 0;font-family:'Cormorant',serif;font-size:1rem;outline:none;width:100%;" placeholder="Your email address">
+        <button onclick="doSubscribe()" style="background:var(--seal);color:var(--paper);border:none;padding:16px 28px;font-family:'Cormorant SC',serif;font-size:0.72rem;letter-spacing:0.2em;cursor:pointer;margin-top:6px;text-align:left;">Subscribe to The Asia Letter →</button>
+        <p style="font-family:'Cormorant SC',serif;font-size:0.6rem;letter-spacing:0.12em;color:var(--ink4);">Free forever · No spam · Unsubscribe anytime</p>
+      </div>
+    </div>
+    <div id="successBox" style="display:none;text-align:center;padding:60px 20px;">
+      <div style="font-size:2rem;color:var(--seal);margin-bottom:16px;">✦</div>
+      <div style="font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;color:var(--paper);margin-bottom:12px;">You're In.</div>
+      <p style="font-size:0.95rem;color:var(--ink4);font-weight:300;">Welcome to The Asia Letter. Your first issue lands Thursday.</p>
+    </div>
   </div>
 </div>
-
-<div class="filter-row">
-  <button class="f-btn on" data-f="all">All</button>
-  <button class="f-btn" data-f="fashion">Fashion</button>
-  <button class="f-btn" data-f="art">Art</button>
-  <button class="f-btn" data-f="culture">Culture</button>
-  <button class="f-btn" data-f="capital">Capital</button>
-  <button class="f-btn" data-f="power">Power</button>
-</div>
-
-<div class="list-wrap">
-  
-</div>
-
 <script>
-document.querySelectorAll('.f-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('on'));
-    btn.classList.add('on');
-    const f = btn.dataset.f;
-    let n = 0;
-    document.querySelectorAll('.a-row').forEach(row => {
-      const show = f === 'all' || row.dataset.cat === f;
-      row.classList.toggle('gone', !show);
-      if (show) { n++; row.querySelector('.a-num').textContent = String(n).padStart(2,'0'); }
-    });
-  });
-});
+function doSubscribe() {
+  const email = document.getElementById('emailInput').value;
+  if (!email) return;
+  document.getElementById('formWrap').style.display = 'none';
+  document.getElementById('successBox').style.display = 'block';
+  setTimeout(() => {
+    window.open('https://xixithemagazine.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+  }, 800);
+}
 </script>
 </main>
 <footer>

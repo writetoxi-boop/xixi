@@ -1,124 +1,159 @@
 {{ define "main" }}
+
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-kicker">Asia's Gen Z Luxury Media Platform</div>
-    <div class="hero-headline">
-      <h1>The World<br>Is Looking<br><em>East.</em></h1>
-    </div>
-    <div class="hero-bottom">
-      <p class="hero-desc">XIXI spotlights Asian culture, fashion, art, and power through a global lens — unfiltered, unapologetic, essential.</p>
-      <div class="hero-actions">
-        <a href="/articles/" class="btn-primary">Read Now</a>
-        <a href="/newsletter/" class="btn-text">The Asia Letter</a>
-      </div>
-    </div>
+  <div class="hero-image">
+    {{ with (index (where .Site.RegularPages "Section" "ne" "") 0) }}
+      {{ with .Params.image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" />
+      {{ else }}
+        <div style="background:#E2DDD4;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-style:italic;color:var(--ash);">Editorial Photography</div>
+      {{ end }}
+    {{ end }}
+    <div class="hero-badge">Editor's Pick</div>
   </div>
-  <div class="hero-right">
-    {{ $featured := where (where .Site.RegularPages "Section" "articles") ".Params.featured" true }}
-    {{ if $featured }}{{ with index $featured 0 }}
-    <a href="{{ .Permalink }}" class="hero-cover">
-      <div class="cover-visual"></div>
-      <div class="seal-stamp"><span>XIXI</span></div>
-      <div class="cover-content">
-        <div class="cover-tag">Cover Story</div>
-        <h2 class="cover-title">{{ .Title }}</h2>
-        <p class="cover-meta">{{ .Params.author }} · {{ .Params.category | title }} · {{ .Params.read_time }}</p>
+  <div class="hero-content">
+    {{ with (index (where .Site.RegularPages "Section" "ne" "") 0) }}
+      <div class="hero-category">{{ .Params.category | default "Feature" }}</div>
+      <h1 class="hero-title">{{ .Title }}</h1>
+      <p class="hero-excerpt">{{ .Summary }}</p>
+      <div class="hero-meta">
+        <span>{{ .Params.author | default "XIXI Editorial" }}</span>
+        <span class="dot"></span>
+        <span>{{ .Date.Format "January 2006" }}</span>
+        <span class="dot"></span>
+        <span>{{ .ReadingTime }} min read</span>
       </div>
-    </a>
-    {{ end }}{{ else }}
-    <a href="/articles/" class="hero-cover">
-      <div class="cover-visual"></div>
-      <div class="seal-stamp"><span>XIXI</span></div>
-      <div class="cover-content">
-        <div class="cover-tag">Cover Story</div>
-        <h2 class="cover-title">The Architects of Tomorrow: How Asia's Gen Z Is Rewriting the Rules of Luxury</h2>
-        <p class="cover-meta">Mei Lin Zhang · Fashion · 12 min read</p>
-      </div>
-    </a>
+      <a href="{{ .Permalink }}" class="read-more">Read Story</a>
     {{ end }}
   </div>
 </section>
 
-<nav class="verticals">
-  <a href="/articles/?cat=fashion" class="vertical"><span class="v-num">01</span><span class="v-name">Fashion</span></a>
-  <a href="/articles/?cat=art" class="vertical"><span class="v-num">02</span><span class="v-name">Art</span></a>
-  <a href="/articles/?cat=culture" class="vertical"><span class="v-num">03</span><span class="v-name">Culture</span></a>
-  <a href="/articles/?cat=capital" class="vertical"><span class="v-num">04</span><span class="v-name">Capital</span></a>
-  <a href="/articles/?cat=power" class="vertical"><span class="v-num">05</span><span class="v-name">Power</span></a>
-</nav>
-
-<div class="section-head reveal">
-  <span class="section-label">Latest Stories</span>
-  <a href="/articles/" class="section-more">All Stories</a>
+<!-- LATEST STORIES -->
+<div class="section-header">
+  <span class="section-title">Latest Stories</span>
+  <a href="/articles" class="section-link">View All</a>
 </div>
-
-{{ $articles := where .Site.RegularPages "Section" "articles" }}
-{{ $articles = $articles.ByDate.Reverse }}
-
-<div class="grid-main reveal">
-  {{ range first 1 $articles }}
-  <a class="a-card lead" href="{{ .Permalink }}">
-    {{ with .Params.image }}<div class="a-card-img" style="background-image:url('{{ . }}')"></div>{{ end }}
-    <div>
-      <div class="a-tag">{{ .Params.category | title }}</div>
-      <h2 class="a-title">{{ .Title }}</h2>
+<div class="featured-grid">
+  {{ range first 3 (where .Site.RegularPages "Section" "ne" "") }}
+  <div class="card">
+    <div class="card-image">
+      {{ with .Params.image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" />
+      {{ else }}
+        <div style="background:#DDD8CE;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-style:italic;color:var(--ash);">{{ .Params.category }}</div>
+      {{ end }}
     </div>
-    <p class="a-excerpt">{{ .Params.excerpt }}</p>
-    <div class="a-meta">
-      <span>{{ .Params.author }} · {{ .Date.Format "2 Jan 2006" }}</span>
-      <span class="a-readtime">{{ .Params.read_time }}</span>
-    </div>
-  </a>
-  {{ end }}
-  {{ range after 1 (first 3 $articles) }}
-  <a class="a-card" href="{{ .Permalink }}">
-    {{ with .Params.image }}<div class="a-card-img-sm" style="background-image:url('{{ . }}')"></div>{{ end }}
-    <div>
-      <div class="a-tag">{{ .Params.category | title }}</div>
-      <h2 class="a-title">{{ .Title }}</h2>
-    </div>
-    <div class="a-meta">
-      <span>{{ .Params.author }} · {{ .Date.Format "2 Jan 2006" }}</span>
-      <span class="a-readtime">{{ .Params.read_time }}</span>
-    </div>
-  </a>
-  {{ end }}
-</div>
-
-<div class="grid-secondary reveal">
-  {{ range after 3 (first 6 $articles) }}
-  <a class="a-card" href="{{ .Permalink }}">
-    {{ with .Params.image }}<div class="a-card-img-sm" style="background-image:url('{{ . }}')"></div>{{ end }}
-    <div>
-      <div class="a-tag">{{ .Params.category | title }}</div>
-      <h2 class="a-title">{{ .Title }}</h2>
-    </div>
-    <div class="a-meta">
-      <span>{{ .Params.author }} · {{ .Date.Format "2 Jan 2006" }}</span>
-      <span class="a-readtime">{{ .Params.read_time }}</span>
-    </div>
-  </a>
-  {{ end }}
-</div>
-
-<div class="divider"></div>
-<div class="nl-band reveal">
-  <div class="nl-left">
-    <div class="nl-kicker">Free Weekly Newsletter</div>
-    <h2 class="nl-title">The Asia<br><em>Letter.</em></h2>
-    <p class="nl-desc">Culture. Commerce. Creators. Capital. Every week — curated for the globally curious.</p>
-    <div class="nl-stats">
-      <div class="nl-stat"><span>12K+</span><span>Readers</span></div>
-      <div class="nl-stat"><span>48%</span><span>Open Rate</span></div>
-      <div class="nl-stat"><span>Free</span><span>Always</span></div>
+    <div class="card-body">
+      <span class="card-tag">{{ .Params.category | default "Feature" }}</span>
+      <h2 class="card-title">{{ .Title }}</h2>
+      <p class="card-excerpt">{{ .Summary | truncate 120 }}</p>
+      <span class="card-meta">{{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min</span>
     </div>
   </div>
-  <div class="nl-right">
-    <div class="nl-form">
-      <input type="email" class="nl-input" placeholder="Your email address">
-      <button class="nl-btn" onclick="window.open('https://xixithemagazine.beehiiv.com/subscribe','_blank')">Subscribe to The Asia Letter →</button>
-      <p class="nl-fine">No spam · Free forever · Unsubscribe anytime</p>
-    </div>
+  {{ end }}
+</div>
+
+<!-- VOLT BANNER -->
+<div class="volt-banner">
+  <div class="volt-banner-text">Exclusive access — the <em>creator intelligence</em> layer you didn't know you needed</div>
+  <a href="/newsletter" class="volt-banner-cta">Unlock Research</a>
+</div>
+
+<!-- FASHION -->
+<div class="section-header">
+  <span class="section-title">Fashion</span>
+  <a href="/fashion" class="section-link">See All Fashion</a>
+</div>
+{{ with (index (where .Site.RegularPages "Params.category" "Fashion") 0) }}
+<div class="editorial-wide">
+  <div class="ew-image">
+    {{ with .Params.image }}
+      <img src="{{ . }}" alt="{{ $.Title }}" />
+    {{ else }}
+      <div style="background:#E0D8CC;height:420px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-style:italic;color:var(--ash);">Fashion Editorial</div>
+    {{ end }}
+  </div>
+  <div class="ew-content">
+    <span class="card-tag" style="margin-bottom:14px;">Fashion · Feature</span>
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:500;line-height:1.2;margin-bottom:18px;">{{ .Title }}</h2>
+    <p style="font-family:var(--font-body);font-size:17px;font-weight:300;color:#555;line-height:1.75;margin-bottom:24px;">{{ .Summary }}</p>
+    <a href="{{ .Permalink }}" class="read-more">Read Story</a>
   </div>
 </div>
+{{ end }}
+
+<!-- CULTURE GRID -->
+<div class="section-header">
+  <span class="section-title">Culture</span>
+  <a href="/culture" class="section-link">See All Culture</a>
+</div>
+<div class="small-grid">
+  {{ range first 4 (where .Site.RegularPages "Params.category" "Culture") }}
+  <div class="small-card">
+    <div class="small-card-image">
+      {{ with .Params.image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" />
+      {{ else }}
+        <div style="background:#DDD8CE;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-style:italic;color:var(--ash);">Culture</div>
+      {{ end }}
+    </div>
+    <span class="small-card-tag">Culture</span>
+    <div class="small-card-title">{{ .Title }}</div>
+  </div>
+  {{ end }}
+</div>
+
+<!-- ASIA LETTER -->
+<div class="asia-letter">
+  <div class="al-eyebrow">Weekly Newsletter</div>
+  <h2 class="al-title">The Asia Letter</h2>
+  <p class="al-sub">One weekly read. The trends, deals, and cultural shifts shaping Asia — before everyone else catches on.</p>
+  <div class="al-form">
+    <input type="email" placeholder="Your email address" />
+    <button>Subscribe</button>
+  </div>
+</div>
+
+<!-- CAPITAL -->
+<div class="section-header">
+  <span class="section-title">Capital</span>
+  <a href="/capital" class="section-link">See All Capital</a>
+</div>
+{{ with (index (where .Site.RegularPages "Params.category" "Capital") 0) }}
+<div class="editorial-wide reverse">
+  <div class="ew-content">
+    <span class="card-tag" style="margin-bottom:14px;">Capital · Deep Dive</span>
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:500;line-height:1.2;margin-bottom:18px;">{{ .Title }}</h2>
+    <p style="font-family:var(--font-body);font-size:17px;font-weight:300;color:#555;line-height:1.75;margin-bottom:24px;">{{ .Summary }}</p>
+    <a href="{{ .Permalink }}" class="read-more">Read Story</a>
+  </div>
+  <div class="ew-image">
+    {{ with .Params.image }}
+      <img src="{{ . }}" alt="{{ $.Title }}" />
+    {{ else }}
+      <div style="background:#D8D4CA;height:420px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-style:italic;color:var(--ash);">Capital Editorial</div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+<!-- TRENDING -->
+<div class="trending">
+  <div class="trending-title">Trending Now</div>
+  <ul class="trending-list">
+    {{ $i := 1 }}
+    {{ range first 4 .Site.RegularPages }}
+    <li>
+      <span class="trending-num">{{ printf "%02d" $i }}</span>
+      <div class="trending-info">
+        <div class="t-tag">{{ .Params.category | default "Feature" }}</div>
+        <div class="t-title">{{ .Title }}</div>
+      </div>
+    </li>
+    {{ $i = add $i 1 }}
+    {{ end }}
+  </ul>
+</div>
+
 {{ end }}
