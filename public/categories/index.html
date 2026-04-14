@@ -19,65 +19,35 @@
 </div>
 <nav>
   <div class="nav-left">
-    <a href="/fashion">Fashion</a>
-    <a href="/culture">Culture</a>
-    <a href="/art">Art</a>
-    <a href="/capital">Capital</a>
-    <a href="/power">Power</a>
+    <a href="/articles/">Stories</a>
+    <a href="/newsletter/">The Asia Letter</a>
+    <a href="/about/">About</a>
+    <a href="/advertise/">Partner</a>
   </div>
   <a href="/" class="nav-logo">XIXI</a>
   <div class="nav-right">
-    <a href="/about">About</a>
-    <a href="/newsletter" class="btn-subscribe">Subscribe</a>
+    <a href="/about/">About</a>
+    <a href="/newsletter/" class="btn-subscribe">Subscribe</a>
   </div>
 </nav>
 <div class="category-strip">
   <a href="/">All</a>
-  <a href="/fashion">Street Style</a>
-  <a href="/culture">Culture</a>
-  <a href="/art">Art</a>
-  <a href="/capital">Capital</a>
-  <a href="/power">Power</a>
-  <a href="/newsletter">The Asia Letter</a>
+  <a href="/articles/">Stories</a>
+  <a href="/newsletter/">The Asia Letter</a>
+  <a href="/about/">About</a>
+  <a href="/advertise/">Partner</a>
 </div>
 
 <main>
-<div class="page-head">
-  <h1>All<br><em>Stories.</em></h1>
-  <div class="page-head-right">
-    <p>Every story we publish is a lens on the forces shaping Asian culture, commerce, and power.</p>
-    <p class="story-count">0 stories</p>
+<div style="padding: 60px 40px; max-width: 1200px; margin: 0 auto;">
+  <div style="margin-bottom: 48px; border-bottom: 1px solid var(--light-ash); padding-bottom: 32px;">
+    <div style="font-family: var(--font-ui); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ash); margin-bottom: 12px;">Categories</div>
+    <h1 style="font-family: var(--font-display); font-size: 48px; font-weight: 400; font-style: italic; line-height: 1.1;">All Stories</h1>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;">
+    
   </div>
 </div>
-
-<div class="filter-row">
-  <button class="f-btn on" data-f="all">All</button>
-  <button class="f-btn" data-f="fashion">Fashion</button>
-  <button class="f-btn" data-f="art">Art</button>
-  <button class="f-btn" data-f="culture">Culture</button>
-  <button class="f-btn" data-f="capital">Capital</button>
-  <button class="f-btn" data-f="power">Power</button>
-</div>
-
-<div class="list-wrap">
-  
-</div>
-
-<script>
-document.querySelectorAll('.f-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('on'));
-    btn.classList.add('on');
-    const f = btn.dataset.f;
-    let n = 0;
-    document.querySelectorAll('.a-row').forEach(row => {
-      const show = f === 'all' || row.dataset.cat === f;
-      row.classList.toggle('gone', !show);
-      if (show) { n++; row.querySelector('.a-num').textContent = String(n).padStart(2,'0'); }
-    });
-  });
-});
-</script>
 </main>
 <footer>
   <div class="footer-grid">
