@@ -5,7 +5,7 @@ categories: ["culture"]
 author: "Seo-Yeon Kim"
 read_time: "5 MIN"
 excerpt: "Park Joon-seo has written three of the biggest K-pop hits of the last two years. Almost nobody outside the industry knows his name."
-image: ""
+image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
 featured: false
 ---
 

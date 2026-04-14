@@ -5,7 +5,7 @@ categories: ["capital"]
 author: "PS"
 read_time: "5 MIN"
 excerpt: "The city-state has quietly become the gateway capital of Southeast Asia. Here's who's betting on it."
-image: ""
+image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800"
 featured: false
 ---
 

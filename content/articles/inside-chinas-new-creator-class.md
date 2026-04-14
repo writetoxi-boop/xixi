@@ -5,7 +5,7 @@ categories: ["culture"]
 author: "Lucy Chen"
 read_time: "8 MIN"
 excerpt: "The influencer economy in China is maturing into something more sophisticated — and more powerful — than anyone in the West has fully understood."
-image: ""
+image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800"
 featured: false
 ---
 

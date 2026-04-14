@@ -5,7 +5,7 @@ categories: ["culture"]
 author: "David Cheung"
 read_time: "6 MIN"
 excerpt: "A new generation of filmmakers is finding ways to tell Hong Kong stories — just not always in Hong Kong."
-image: ""
+image: "https://images.unsplash.com/photo-1536431311719-398b6704d4cc?w=800"
 featured: false
 ---
 

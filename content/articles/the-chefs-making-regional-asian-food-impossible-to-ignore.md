@@ -5,7 +5,7 @@ categories: ["culture"]
 author: "Priya Nair"
 read_time: "7 MIN"
 excerpt: "From Penang to Chengdu, a new generation of chefs is refusing to let regional cuisines be flattened into continental clichés."
-image: ""
+image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800"
 featured: false
 ---
 

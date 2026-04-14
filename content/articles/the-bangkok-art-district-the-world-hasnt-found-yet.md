@@ -5,7 +5,7 @@ categories: ["art"]
 author: "Nong Siriporn"
 read_time: "5 MIN"
 excerpt: "In a cluster of shophouses and warehouses near the Chao Phraya, Bangkok's most interesting creative work is happening almost entirely off the international radar."
-image: ""
+image: "https://images.unsplash.com/photo-1508009603885-50cf7c8dd0d5?w=800"
 featured: false
 ---
 

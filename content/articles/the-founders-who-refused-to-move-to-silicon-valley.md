@@ -5,7 +5,7 @@ categories: ["power"]
 author: "James Wei"
 read_time: "7 MIN"
 excerpt: "A new class of tech entrepreneurs building for Asia — on Asia's terms. Meet five of them."
-image: ""
+image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800"
 featured: false
 ---
 

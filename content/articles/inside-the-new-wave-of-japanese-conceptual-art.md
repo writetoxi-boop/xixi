@@ -5,7 +5,7 @@ categories: ["art"]
 author: "Mia Tanaka"
 read_time: "6 MIN"
 excerpt: "The studios reshaping how Asia speaks to the world — one immersive installation at a time."
-image: ""
+image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800"
 featured: false
 ---
 

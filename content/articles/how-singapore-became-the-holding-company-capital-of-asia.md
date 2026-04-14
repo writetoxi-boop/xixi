@@ -5,7 +5,7 @@ categories: ["power"]
 author: "PS"
 read_time: "6 MIN"
 excerpt: "The city-state's rise as the preferred domicile for Asia's most ambitious multi-entity business structures is no accident."
-image: ""
+image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=800"
 featured: false
 ---
 

@@ -5,7 +5,7 @@ categories: ["fashion"]
 author: "Ji-Yeon Park"
 read_time: "5 MIN"
 excerpt: "From Dover Street Market to Wolf & Badger, Korean designers are becoming the most talked-about names in London's most discerning retail spaces."
-image: ""
+image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800"
 featured: false
 ---
 

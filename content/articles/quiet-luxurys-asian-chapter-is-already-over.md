@@ -5,7 +5,7 @@ categories: ["fashion"]
 author: "Ji-Yeon Park"
 read_time: "6 MIN"
 excerpt: "The maximalism creeping back into Seoul street style, Bangkok editorial, and Jakarta mall culture suggests a generation that tried minimalism and decided it wasn't theirs to begin with."
-image: ""
+image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
 featured: false
 ---
 

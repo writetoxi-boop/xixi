@@ -5,7 +5,7 @@ categories: ["capital"]
 author: "PS"
 read_time: "7 MIN"
 excerpt: "Why influencer marketing in Southeast Asia is not just growing faster than the rest of the world — it's operating by different rules entirely."
-image: ""
+image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800"
 featured: false
 ---
 

@@ -5,7 +5,7 @@ categories: ["capital"]
 author: "Lucy Chen"
 read_time: "8 MIN"
 excerpt: "The lines between authentic, inspired, and fake have always been complicated in China. They are becoming more so."
-image: ""
+image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800"
 featured: false
 ---
 
