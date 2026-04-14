@@ -15,7 +15,7 @@
 <div class="top-bar">
   New drop: The Asia Letter — Weekly intelligence from across the region
   <span>✦</span>
-  Subscribe now →
+  <a href="https://xixithemagazine.beehiiv.com/subscribe" target="_blank" style="color: var(--volt);">Subscribe now →</a>
 </div>
 <nav>
   <div class="nav-left">
@@ -27,7 +27,7 @@
   <a href="/" class="nav-logo">XIXI</a>
   <div class="nav-right">
     <a href="/about/">About</a>
-    <a href="/newsletter/" class="btn-subscribe">Subscribe</a>
+    <a href="https://xixithemagazine.beehiiv.com/subscribe" target="_blank" class="btn-subscribe">Subscribe</a>
   </div>
 </nav>
 <div class="category-strip">
@@ -84,40 +84,39 @@
       <div class="footer-logo">XIXI</div>
       <p class="footer-tagline">Asia's digital culture magazine — fashion, art, power, and capital from the continent that's rewriting the rules.</p>
       <div class="social-links">
-        <a href="#">X</a>
-        <a href="#">in</a>
-        <a href="#">ig</a>
+        <a href="https://www.instagram.com/xixithemagazine/" target="_blank" rel="noopener">ig</a>
+        <a href="https://www.pinterest.com/xixithemagazine/" target="_blank" rel="noopener">pt</a>
       </div>
     </div>
     <div class="footer-col">
       <h4>Verticals</h4>
       <ul>
-        <li><a href="/fashion">Fashion</a></li>
-        <li><a href="/art">Art</a></li>
-        <li><a href="/culture">Culture</a></li>
-        <li><a href="/capital">Capital</a></li>
-        <li><a href="/power">Power</a></li>
+        <li><a href="/categories/fashion/">Fashion</a></li>
+        <li><a href="/categories/art/">Art</a></li>
+        <li><a href="/categories/culture/">Culture</a></li>
+        <li><a href="/categories/capital/">Capital</a></li>
+        <li><a href="/categories/power/">Power</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="/about">About XIXI</a></li>
-        <li><a href="/advertise">Advertise</a></li>
-        <li><a href="/advertise">Partner With Us</a></li>
+        <li><a href="/about/">About XIXI</a></li>
+        <li><a href="/advertise/">Advertise</a></li>
+        <li><a href="/advertise/">Partner With Us</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Read</h4>
       <ul>
-        <li><a href="/newsletter">The Asia Letter</a></li>
-        <li><a href="/articles">All Stories</a></li>
+        <li><a href="https://xixithemagazine.beehiiv.com/subscribe" target="_blank">The Asia Letter</a></li>
+        <li><a href="/articles/">All Stories</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 <span class="footer-volt">XIXI</span>. Part of Shibuya Holdings.</p>
-    <p>Privacy Policy · Terms</p>
+    <p><a href="/about/" style="color:rgba(255,255,255,0.35);">Privacy Policy</a> · <a href="/about/" style="color:rgba(255,255,255,0.35);">Terms</a></p>
   </div>
 </footer>
 
@@ -128,5 +127,133 @@ if (window.netlifyIdentity) {
   });
 }
 </script>
+
+<div id="xixi-popup" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(26,26,26,0.7); backdrop-filter:blur(4px); align-items:center; justify-content:center;">
+  <div style="background:var(--white); max-width:480px; width:90%; padding:56px 48px; position:relative; animation:fadeUp 0.4s ease;">
+    <button onclick="closePopup()" style="position:absolute; top:20px; right:24px; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ash);">✕</button>
+    <div style="font-family:var(--font-ui); font-size:10px; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--volt); background:var(--ink); display:inline-block; padding:4px 12px; margin-bottom:20px;">The Asia Letter</div>
+    <h2 style="font-family:var(--font-display); font-size:32px; font-weight:400; font-style:italic; line-height:1.2; margin-bottom:12px;">Stay ahead of Asia.</h2>
+    <p style="font-family:var(--font-body); font-size:16px; font-weight:300; color:#555; line-height:1.7; margin-bottom:28px;">One weekly read. The trends, deals, and cultural shifts shaping Asia — before everyone else catches on.</p>
+    <div style="display:flex; gap:0; margin-bottom:16px;">
+      <input id="popup-email" type="email" placeholder="Your email address" style="flex:1; border:1px solid var(--light-ash); border-right:none; padding:13px 16px; font-family:var(--font-ui); font-size:13px; outline:none; border-radius:2px 0 0 2px;" />
+      <button onclick="submitPopup()" style="background:var(--ink); color:var(--white); border:none; padding:13px 22px; font-family:var(--font-ui); font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; cursor:pointer; border-radius:0 2px 2px 0;">Subscribe</button>
+    </div>
+    <p id="popup-msg" style="font-size:12px; color:var(--ash); display:none; margin-top:8px;"></p>
+    <p style="font-size:11px; color:var(--ash); letter-spacing:0.05em;">No spam. Unsubscribe anytime.</p>
+  </div>
+</div>
+
+<script>
+
+(function() {
+  if (true) {
+    setTimeout(function() {
+      var popup = document.getElementById('xixi-popup');
+      popup.style.display = 'flex';
+    }, 5000);
+  }
+})();
+
+function closePopup() {
+  document.getElementById('xixi-popup').style.display = 'none';
+  
+  var d = new Date();
+  d.setTime(d.getTime() + (30*24*60*60*1000));
+  document.cookie = 'xixi_popup_seen=1; expires=' + d.toUTCString() + '; path=/';
+}
+
+function submitPopup() {
+  var email = document.getElementById('popup-email').value;
+  var msg = document.getElementById('popup-msg');
+  if (!email || !email.includes('@')) {
+    msg.style.display = 'block';
+    msg.style.color = '#e74c3c';
+    msg.textContent = 'Please enter a valid email address.';
+    return;
+  }
+  
+  fetch('https://api.beehiiv.com/v2/publications/pub_2bbcfe0a-037a-4e27-8567-3fe04403e342/subscriptions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer dqLE9RZnbfNE7AbCMck8OXn1PchpO5rZYxQ1HWT5XiJUaZJNvT0FZ0SzxM4t94RB' },
+    body: JSON.stringify({ email: email, reactivate_existing: false, send_welcome_email: true })
+  })
+  .then(function(r) {
+    msg.style.display = 'block';
+    if (r.ok) {
+      msg.style.color = '#27ae60';
+      msg.textContent = 'You're in! Welcome to The Asia Letter.';
+      document.getElementById('popup-email').value = '';
+      var d = new Date();
+      d.setTime(d.getTime() + (30*24*60*60*1000));
+      document.cookie = 'xixi_popup_seen=1; expires=' + d.toUTCString() + '; path=/';
+      setTimeout(closePopup, 2000);
+    } else {
+      msg.style.color = '#e74c3c';
+      msg.textContent = 'Something went wrong. Please try again.';
+    }
+  })
+  .catch(function() {
+    // Fallback — redirect to Beehiiv
+    window.open('https://xixithemagazine.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+    closePopup();
+  });
+}
+
+
+document.getElementById('xixi-popup').addEventListener('click', function(e) {
+  if (e.target === this) closePopup();
+});
+</script>
+
+
+
+<div id="xixi-popup" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(26,26,26,0.7); backdrop-filter:blur(4px); align-items:center; justify-content:center;">
+  <div style="background:#FFFFFF; max-width:480px; width:90%; padding:56px 48px; position:relative;">
+    <button onclick="closePopup()" style="position:absolute; top:20px; right:24px; background:none; border:none; font-size:20px; cursor:pointer; color:#9B9B9B;">&#x2715;</button>
+    <div style="font-family:sans-serif; font-size:10px; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:#D4F53C; background:#1A1A1A; display:inline-block; padding:4px 12px; margin-bottom:20px;">The Asia Letter</div>
+    <h2 style="font-family:Georgia,serif; font-size:32px; font-weight:400; font-style:italic; line-height:1.2; margin-bottom:12px;">Stay ahead of Asia.</h2>
+    <p style="font-family:Georgia,serif; font-size:16px; font-weight:300; color:#555; line-height:1.7; margin-bottom:28px;">One weekly read. The trends, deals, and cultural shifts shaping Asia — before everyone else catches on.</p>
+    <div style="display:flex;">
+      <input id="popup-email" type="email" placeholder="Your email address" style="flex:1; border:1px solid #E8E4DC; border-right:none; padding:13px 16px; font-family:sans-serif; font-size:13px; outline:none;" />
+      <button onclick="submitPopup()" style="background:#1A1A1A; color:#FFFFFF; border:none; padding:13px 22px; font-family:sans-serif; font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; cursor:pointer;">Subscribe</button>
+    </div>
+    <p id="popup-msg" style="font-size:12px; color:#9B9B9B; display:none; margin-top:8px;"></p>
+    <p style="font-size:11px; color:#9B9B9B; margin-top:12px;">No spam. Unsubscribe anytime.</p>
+  </div>
+</div>
+<script>
+setTimeout(function() {
+  var p = document.getElementById('xixi-popup');
+  if (p) p.style.display = 'flex';
+}, 5000);
+
+function closePopup() {
+  document.getElementById('xixi-popup').style.display = 'none';
+  var d = new Date();
+  d.setTime(d.getTime() + (30*24*60*60*1000));
+  document.cookie = 'xixi_seen=1; expires=' + d.toUTCString() + '; path=/';
+}
+
+function submitPopup() {
+  var email = document.getElementById('popup-email').value;
+  var msg = document.getElementById('popup-msg');
+  if (!email || !email.includes('@')) {
+    msg.style.display = 'block';
+    msg.style.color = '#e74c3c';
+    msg.textContent = 'Please enter a valid email.';
+    return;
+  }
+  window.open('https://xixithemagazine.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+  msg.style.display = 'block';
+  msg.style.color = '#27ae60';
+  msg.textContent = "You're in! Check your inbox.";
+  setTimeout(closePopup, 2000);
+}
+
+document.getElementById('xixi-popup').addEventListener('click', function(e) {
+  if (e.target === this) closePopup();
+});
+</script>
+
 </body>
 </html>
