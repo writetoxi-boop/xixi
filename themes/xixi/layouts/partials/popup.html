@@ -1,0 +1,77 @@
+<!-- EMAIL POPUP -->
+<div id="xixi-popup" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(26,26,26,0.7); backdrop-filter:blur(4px); align-items:center; justify-content:center;">
+  <div style="background:var(--white); max-width:480px; width:90%; padding:56px 48px; position:relative; animation:fadeUp 0.4s ease;">
+    <button onclick="closePopup()" style="position:absolute; top:20px; right:24px; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ash);">✕</button>
+    <div style="font-family:var(--font-ui); font-size:10px; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--volt); background:var(--ink); display:inline-block; padding:4px 12px; margin-bottom:20px;">The Asia Letter</div>
+    <h2 style="font-family:var(--font-display); font-size:32px; font-weight:400; font-style:italic; line-height:1.2; margin-bottom:12px;">Stay ahead of Asia.</h2>
+    <p style="font-family:var(--font-body); font-size:16px; font-weight:300; color:#555; line-height:1.7; margin-bottom:28px;">One weekly read. The trends, deals, and cultural shifts shaping Asia — before everyone else catches on.</p>
+    <div style="display:flex; gap:0; margin-bottom:16px;">
+      <input id="popup-email" type="email" placeholder="Your email address" style="flex:1; border:1px solid var(--light-ash); border-right:none; padding:13px 16px; font-family:var(--font-ui); font-size:13px; outline:none; border-radius:2px 0 0 2px;" />
+      <button onclick="submitPopup()" style="background:var(--ink); color:var(--white); border:none; padding:13px 22px; font-family:var(--font-ui); font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; cursor:pointer; border-radius:0 2px 2px 0;">Subscribe</button>
+    </div>
+    <p id="popup-msg" style="font-size:12px; color:var(--ash); display:none; margin-top:8px;"></p>
+    <p style="font-size:11px; color:var(--ash); letter-spacing:0.05em;">No spam. Unsubscribe anytime.</p>
+  </div>
+</div>
+
+<script>
+// Show popup after 40 seconds, once per session
+(function() {
+  if (document.cookie.indexOf('xixi_popup_seen=1') === -1) {
+    setTimeout(function() {
+      var popup = document.getElementById('xixi-popup');
+      popup.style.display = 'flex';
+    }, 40000);
+  }
+})();
+
+function closePopup() {
+  document.getElementById('xixi-popup').style.display = 'none';
+  // Set cookie for 30 days
+  var d = new Date();
+  d.setTime(d.getTime() + (30*24*60*60*1000));
+  document.cookie = 'xixi_popup_seen=1; expires=' + d.toUTCString() + '; path=/';
+}
+
+function submitPopup() {
+  var email = document.getElementById('popup-email').value;
+  var msg = document.getElementById('popup-msg');
+  if (!email || !email.includes('@')) {
+    msg.style.display = 'block';
+    msg.style.color = '#e74c3c';
+    msg.textContent = 'Please enter a valid email address.';
+    return;
+  }
+  // Submit to Beehiiv
+  fetch('https://api.beehiiv.com/v2/publications/pub_2bbcfe0a-037a-4e27-8567-3fe04403e342/subscriptions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer dqLE9RZnbfNE7AbCMck8OXn1PchpO5rZYxQ1HWT5XiJUaZJNvT0FZ0SzxM4t94RB' },
+    body: JSON.stringify({ email: email, reactivate_existing: false, send_welcome_email: true })
+  })
+  .then(function(r) {
+    msg.style.display = 'block';
+    if (r.ok) {
+      msg.style.color = '#27ae60';
+      msg.textContent = 'You're in! Welcome to The Asia Letter.';
+      document.getElementById('popup-email').value = '';
+      var d = new Date();
+      d.setTime(d.getTime() + (30*24*60*60*1000));
+      document.cookie = 'xixi_popup_seen=1; expires=' + d.toUTCString() + '; path=/';
+      setTimeout(closePopup, 2000);
+    } else {
+      msg.style.color = '#e74c3c';
+      msg.textContent = 'Something went wrong. Please try again.';
+    }
+  })
+  .catch(function() {
+    // Fallback — redirect to Beehiiv
+    window.open('https://xixithemagazine.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
+    closePopup();
+  });
+}
+
+// Close on backdrop click
+document.getElementById('xixi-popup').addEventListener('click', function(e) {
+  if (e.target === this) closePopup();
+});
+</script>
