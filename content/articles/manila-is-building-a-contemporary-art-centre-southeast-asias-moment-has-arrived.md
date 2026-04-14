@@ -2,7 +2,7 @@
 title: Manila Is Building a Contemporary Art Centre. Southeast Asia's Moment Has
   Arrived.
 date: 2026-04-11T12:49:32.785Z
-category: art
+categories: ["art"]
 author: PS
 read_time: 6 MIN
 excerpt: The Ayala Foundation just announced Kontempo — a major contemporary art

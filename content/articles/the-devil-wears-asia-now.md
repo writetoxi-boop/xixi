@@ -1,7 +1,7 @@
 ---
 title: The Devil Wears Asia Now
 date: 2026-04-11T12:46:17.936Z
-category: culture
+categories: ["culture"]
 author: "Veronica "
 read_time: "6 MIN "
 excerpt: The Devil Wears Prada gave a generation its mythology of fashion power.

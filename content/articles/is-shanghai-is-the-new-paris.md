@@ -1,7 +1,7 @@
 ---
 title: Is Shanghai Is the New Paris?
 date: 2026-04-06T12:21:17.005Z
-category: fashion
+categories: ["fashion"]
 author: PS
 read_time: 2 MIN
 excerpt: Margiela leaves Paris for Shanghai — and folds couture into

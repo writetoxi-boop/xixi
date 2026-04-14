@@ -1,7 +1,7 @@
 ---
 title: Tokyo Is Now the World's Fifth Fashion Capital
 date: 2026-04-07T02:11:15.129Z
-category: capital
+categories: ["capital"]
 author: Veronica
 read_time: 5 MIN
 excerpt: "Rakuten Fashion Week 2026 didn't just showcase Japanese designers. It

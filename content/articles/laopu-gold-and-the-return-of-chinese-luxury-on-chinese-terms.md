@@ -1,7 +1,7 @@
 ---
 title: Laopu Gold and the Return of Chinese Luxury on Chinese Terms
 date: 2026-04-11T06:33:22.931Z
-category: capital
+categories: ["capital"]
 author: PS
 read_time: 8 MIN
 excerpt: "While Western luxury brands navigate China's softening market,

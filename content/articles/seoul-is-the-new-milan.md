@@ -1,7 +1,7 @@
 ---
 title: "Seoul Is the New Milan: Inside the K-Fashion Takeover Reshaping Global Runways"
 date: 2026-04-06T09:00:00.000Z
-category: fashion
+categories: ["fashion"]
 author: Ji-Yeon Park
 read_time: 9 min
 excerpt: From Gentle Monster to Ader Error, a new generation of Korean designers is doing what no one thought possible — making the West come to them.

@@ -1,7 +1,7 @@
 ---
 title: Korea Spends More on Luxury Per Capita Than Anyone Else on Earth. Here's Why.
 date: 2026-04-11T06:25:43.874Z
-category: capital
+categories: ["capital"]
 author: PS
 read_time: 6 MIN
 excerpt: South Koreans spend an average of $325 per capita on personal luxury

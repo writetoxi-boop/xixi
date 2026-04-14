@@ -1,7 +1,7 @@
 ---
 title: Is Bangkok a Fashion Capital Now?
 date: 2026-04-11T06:28:59.902Z
-category: fashion
+categories: ["fashion"]
 author: Veronica
 read_time: 5 MIN
 excerpt: "Chanel, Gucci, Versace have all chosen Bangkok for major activations.

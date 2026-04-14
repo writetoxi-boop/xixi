@@ -1,7 +1,7 @@
 ---
 title: The Quiet Luxury Codes That Only Asians Understand
 date: 2026-04-07T05:52:21.401Z
-category: culture
+categories: ["culture"]
 author: PS
 read_time: 8 MIN
 excerpt: While the West discovers "stealth wealth," Asia has always had its own

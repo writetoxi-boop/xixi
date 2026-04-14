@@ -1,7 +1,7 @@
 ---
 title: Louis Vuitton Is Building Worlds in Asia
 date: 2026-04-11T06:21:51.366Z
-category: capital
+categories: ["capital"]
 author: PS
 read_time: 6 MIN
 excerpt: A six-storey cultural complex in Seoul. An intimate private salon in

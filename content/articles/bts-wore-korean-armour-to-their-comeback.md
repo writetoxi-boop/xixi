@@ -1,7 +1,7 @@
 ---
 title: BTS Wore Korean Armour to Their Comeback
 date: 2026-04-07T02:07:49.921Z
-category: fashion
+categories: ["fashion"]
 author: PS
 read_time: 6 MIN
 excerpt: When all seven members of BTS took the stage at Gwanghwamun Square in

@@ -1,7 +1,7 @@
 ---
 title: William Chan Runway Walk
 date: 2026-04-07T05:48:33.442Z
-category: fashion
+categories: ["fashion"]
 author: Veronica
 read_time: 5 MIN
 excerpt: Chinese actor William Chan became the first Asian celebrity to walk the

@@ -6,6 +6,35 @@
     <description>Recent content in Categories on XIXI</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 11 Apr 2026 12:49:32 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Art</title>
+      <link>http://localhost:1313/categories/art/</link>
+      <pubDate>Sat, 11 Apr 2026 12:49:32 +0000</pubDate>
+      <guid>http://localhost:1313/categories/art/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Culture</title>
+      <link>http://localhost:1313/categories/culture/</link>
+      <pubDate>Sat, 11 Apr 2026 12:46:17 +0000</pubDate>
+      <guid>http://localhost:1313/categories/culture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Capital</title>
+      <link>http://localhost:1313/categories/capital/</link>
+      <pubDate>Sat, 11 Apr 2026 06:33:22 +0000</pubDate>
+      <guid>http://localhost:1313/categories/capital/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fashion</title>
+      <link>http://localhost:1313/categories/fashion/</link>
+      <pubDate>Sat, 11 Apr 2026 06:28:59 +0000</pubDate>
+      <guid>http://localhost:1313/categories/fashion/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
