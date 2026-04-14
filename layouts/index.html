@@ -1,0 +1,159 @@
+{{ define "main" }}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-image">
+    {{ with (index (where .Site.RegularPages "Section" "ne" "") 0) }}
+      {{ with .Params.image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" />
+      {{ else }}
+        <div style="background:#E2DDD4;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-style:italic;color:var(--ash);">Editorial Photography</div>
+      {{ end }}
+    {{ end }}
+    <div class="hero-badge">Editor's Pick</div>
+  </div>
+  <div class="hero-content">
+    {{ with (index (where .Site.RegularPages "Section" "ne" "") 0) }}
+      <div class="hero-category">{{ .Params.category | default "Feature" }}</div>
+      <h1 class="hero-title">{{ .Title }}</h1>
+      <p class="hero-excerpt">{{ .Summary }}</p>
+      <div class="hero-meta">
+        <span>{{ .Params.author | default "XIXI Editorial" }}</span>
+        <span class="dot"></span>
+        <span>{{ .Date.Format "January 2006" }}</span>
+        <span class="dot"></span>
+        <span>{{ .ReadingTime }} min read</span>
+      </div>
+      <a href="{{ .Permalink }}" class="read-more">Read Story</a>
+    {{ end }}
+  </div>
+</section>
+
+<!-- LATEST STORIES -->
+<div class="section-header">
+  <span class="section-title">Latest Stories</span>
+  <a href="/articles" class="section-link">View All</a>
+</div>
+<div class="featured-grid">
+  {{ range first 3 (where .Site.RegularPages "Section" "ne" "") }}
+  <div class="card">
+    <div class="card-image">
+      {{ with .Params.image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" />
+      {{ else }}
+        <div style="background:#DDD8CE;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-style:italic;color:var(--ash);">{{ .Params.category }}</div>
+      {{ end }}
+    </div>
+    <div class="card-body">
+      <span class="card-tag">{{ .Params.category | default "Feature" }}</span>
+      <h2 class="card-title">{{ .Title }}</h2>
+      <p class="card-excerpt">{{ .Summary | truncate 120 }}</p>
+      <span class="card-meta">{{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min</span>
+    </div>
+  </div>
+  {{ end }}
+</div>
+
+<!-- VOLT BANNER -->
+<div class="volt-banner">
+  <div class="volt-banner-text">Exclusive access — the <em>creator intelligence</em> layer you didn't know you needed</div>
+  <a href="/newsletter" class="volt-banner-cta">Unlock Research</a>
+</div>
+
+<!-- FASHION -->
+<div class="section-header">
+  <span class="section-title">Fashion</span>
+  <a href="/fashion" class="section-link">See All Fashion</a>
+</div>
+{{ with (index (where .Site.RegularPages "Params.category" "Fashion") 0) }}
+<div class="editorial-wide">
+  <div class="ew-image">
+    {{ with .Params.image }}
+      <img src="{{ . }}" alt="{{ $.Title }}" />
+    {{ else }}
+      <div style="background:#E0D8CC;height:420px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-style:italic;color:var(--ash);">Fashion Editorial</div>
+    {{ end }}
+  </div>
+  <div class="ew-content">
+    <span class="card-tag" style="margin-bottom:14px;">Fashion · Feature</span>
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:500;line-height:1.2;margin-bottom:18px;">{{ .Title }}</h2>
+    <p style="font-family:var(--font-body);font-size:17px;font-weight:300;color:#555;line-height:1.75;margin-bottom:24px;">{{ .Summary }}</p>
+    <a href="{{ .Permalink }}" class="read-more">Read Story</a>
+  </div>
+</div>
+{{ end }}
+
+<!-- CULTURE GRID -->
+<div class="section-header">
+  <span class="section-title">Culture</span>
+  <a href="/culture" class="section-link">See All Culture</a>
+</div>
+<div class="small-grid">
+  {{ range first 4 (where .Site.RegularPages "Params.category" "Culture") }}
+  <div class="small-card">
+    <div class="small-card-image">
+      {{ with .Params.image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" />
+      {{ else }}
+        <div style="background:#DDD8CE;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-style:italic;color:var(--ash);">Culture</div>
+      {{ end }}
+    </div>
+    <span class="small-card-tag">Culture</span>
+    <div class="small-card-title">{{ .Title }}</div>
+  </div>
+  {{ end }}
+</div>
+
+<!-- ASIA LETTER -->
+<div class="asia-letter">
+  <div class="al-eyebrow">Weekly Newsletter</div>
+  <h2 class="al-title">The Asia Letter</h2>
+  <p class="al-sub">One weekly read. The trends, deals, and cultural shifts shaping Asia — before everyone else catches on.</p>
+  <div class="al-form">
+    <input type="email" placeholder="Your email address" />
+    <button>Subscribe</button>
+  </div>
+</div>
+
+<!-- CAPITAL -->
+<div class="section-header">
+  <span class="section-title">Capital</span>
+  <a href="/capital" class="section-link">See All Capital</a>
+</div>
+{{ with (index (where .Site.RegularPages "Params.category" "Capital") 0) }}
+<div class="editorial-wide reverse">
+  <div class="ew-content">
+    <span class="card-tag" style="margin-bottom:14px;">Capital · Deep Dive</span>
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:500;line-height:1.2;margin-bottom:18px;">{{ .Title }}</h2>
+    <p style="font-family:var(--font-body);font-size:17px;font-weight:300;color:#555;line-height:1.75;margin-bottom:24px;">{{ .Summary }}</p>
+    <a href="{{ .Permalink }}" class="read-more">Read Story</a>
+  </div>
+  <div class="ew-image">
+    {{ with .Params.image }}
+      <img src="{{ . }}" alt="{{ $.Title }}" />
+    {{ else }}
+      <div style="background:#D8D4CA;height:420px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-style:italic;color:var(--ash);">Capital Editorial</div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+<!-- TRENDING -->
+<div class="trending">
+  <div class="trending-title">Trending Now</div>
+  <ul class="trending-list">
+    {{ $i := 1 }}
+    {{ range first 4 .Site.RegularPages }}
+    <li>
+      <span class="trending-num">{{ printf "%02d" $i }}</span>
+      <div class="trending-info">
+        <div class="t-tag">{{ .Params.category | default "Feature" }}</div>
+        <div class="t-title">{{ .Title }}</div>
+      </div>
+    </li>
+    {{ $i = add $i 1 }}
+    {{ end }}
+  </ul>
+</div>
+
+{{ end }}

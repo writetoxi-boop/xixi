@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div style="padding: 60px 40px; max-width: 1200px; margin: 0 auto;">
+  <div style="margin-bottom: 48px; border-bottom: 1px solid var(--light-ash); padding-bottom: 32px;">
+    <div style="font-family: var(--font-ui); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ash); margin-bottom: 12px;">Category</div>
+    <h1 style="font-family: var(--font-display); font-size: 48px; font-weight: 400; font-style: italic; line-height: 1.1;">{{ .Title }}</h1>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;">
+    {{ range .Pages }}
+    <div class="card" style="border-right: 1px solid var(--light-ash); border-bottom: 1px solid var(--light-ash);">
+      <div class="card-image" style="height: 220px;">
+        {{ with .Params.image }}
+          <img src="{{ . }}" alt="{{ $.Title }}" />
+        {{ else }}
+          <div style="background: var(--light-ash); height: 100%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-style: italic; color: var(--ash);">{{ .Params.category }}</div>
+        {{ end }}
+      </div>
+      <div class="card-body">
+        <span class="card-tag">{{ .Params.category | default "Feature" }}</span>
+        <h2 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <p class="card-excerpt">{{ .Summary | truncate 100 }}</p>
+        <span class="card-meta">{{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min</span>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
