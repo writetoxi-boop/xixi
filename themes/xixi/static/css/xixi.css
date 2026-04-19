@@ -148,7 +148,7 @@ nav {
   display: grid; grid-template-columns: repeat(3, 1fr);
   border-bottom: 1px solid var(--light-ash);
 }
-.card { border-right: 1px solid var(--light-ash); overflow: hidden; cursor: pointer; }
+.card { border-right: 1px solid var(--light-ash); overflow: hidden; cursor: pointer; display: block; text-decoration: none; color: inherit; }
 .card:last-child { border-right: none; }
 .card-image { height: 240px; overflow: hidden; background: var(--light-ash); }
 .card-image img { transition: transform 0.5s ease; }
@@ -343,3 +343,62 @@ cat > themes/xixi/layouts/partials/nav.html << 'EOF'
   <a href="/power">Power</a>
   <a href="/newsletter">The Asia Letter</a>
 </div>
+
+/* ── MOBILE NAV FIX ── */
+@media (max-width: 768px) {
+  nav {
+    padding: 0 20px;
+    height: 56px;
+    position: relative;
+  }
+  .nav-left { display: none; }
+  .nav-right a:not(.btn-subscribe) { display: none; }
+  .nav-logo {
+    position: static;
+    transform: none;
+    font-size: 22px;
+  }
+  .top-bar {
+    font-size: 10px;
+    padding: 8px 16px;
+    line-height: 1.6;
+  }
+  .category-strip {
+    gap: 20px;
+    padding: 12px 20px;
+    justify-content: flex-start;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+  .category-strip::-webkit-scrollbar { display: none; }
+}
+
+/* ── MOBILE NAV FIX V2 ── */
+@media (max-width: 768px) {
+  .nav-logo {
+    position: static !important;
+    transform: none !important;
+    font-size: 22px !important;
+  }
+  .nav-left { display: none !important; }
+  .nav-right a:not(.btn-subscribe) { display: none !important; }
+}
+
+@media screen and (max-width: 768px) {
+  nav { padding: 0 16px; height: auto; min-height: 52px; flex-wrap: nowrap; justify-content: space-between; }
+  .nav-left { display: none; }
+  .nav-right a:not(.btn-subscribe) { display: none; }
+  .nav-logo { position: static; transform: none; left: auto; font-size: 20px; }
+}
+
+@media screen and (max-width: 768px) {
+  .featured-grid { grid-template-columns: 1fr; }
+  .small-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .editorial-wide, .editorial-wide.reverse { grid-template-columns: 1fr; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.1rem; }
+  .hero-title { font-size: 2.2rem; }
+  .section-title { font-size: 1.6rem; }
+}
