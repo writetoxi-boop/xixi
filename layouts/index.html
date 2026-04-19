@@ -36,7 +36,7 @@
 </div>
 <div class="featured-grid">
   {{ range first 3 (where .Site.RegularPages "Section" "ne" "") }}
-  <div class="card">
+  <a href="{{ .Permalink }}" class="card">
     <div class="card-image">
       {{ with .Params.image }}
         <img src="{{ . }}" alt="{{ $.Title }}" />
@@ -50,7 +50,7 @@
       <p class="card-excerpt">{{ .Summary | truncate 120 }}</p>
       <span class="card-meta">{{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min</span>
     </div>
-  </div>
+  </a>
   {{ end }}
 </div>
 
