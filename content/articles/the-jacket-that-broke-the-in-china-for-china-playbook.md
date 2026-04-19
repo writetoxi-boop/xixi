@@ -1,7 +1,7 @@
 ---
 title: The Jacket That Broke the "In China, For China" Playbook
 date: 2026-04-19T11:38:13.778Z
-category: fashion
+categories: ["fashion"]
 author: PS
 read_time: 5 MIN
 excerpt: Adidas designed the Chinese Track Top for its domestic market. It

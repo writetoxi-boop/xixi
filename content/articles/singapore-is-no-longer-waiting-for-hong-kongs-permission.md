@@ -1,7 +1,7 @@
 ---
 title: Singapore Is No Longer Waiting for Hong Kong's Permission
 date: 2026-04-19T11:41:18.713Z
-category: art
+categories: ["art"]
 author: PS
 read_time: 5 MIN
 excerpt: In 2024, Singapore became the fifth-largest global art importer, with a
