@@ -5,8 +5,8 @@ theme = "xixi"
 paginate = 12
 
 [params]
-  description = "Asia's culture, commerce, creators, capital"
-  tagline = "The World Is Looking East"
+  description = "Asia isn't a trend. It's the point."
+  tagline = "XIXI covers what everyone else misses — and argues what no one else will."
 
 [taxonomies]
   category = "categories"
