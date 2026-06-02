@@ -12,13 +12,28 @@
 {{ if $articles }}
 <div class="archive-grid">
   {{ range $articles.ByDate.Reverse }}
+
+    {{ $kicker := .Params.kicker }}
+    {{ if not $kicker }}
+      {{ with .Params.categories }}
+        {{ if reflect.IsSlice . }}
+          {{ $kicker = index . 0 }}
+        {{ else }}
+          {{ $kicker = . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ $dek := .Params.dek }}
+    {{ if not $dek }}{{ $dek = .Params.excerpt }}{{ end }}
+
   <div class="archive-item">
     <a href="{{ .RelPermalink }}">
-      {{ with .Params.kicker }}
+      {{ with $kicker }}
       <div class="archive-kicker">{{ . }}</div>
       {{ end }}
       <h2 class="archive-headline">{{ .Title }}</h2>
-      {{ with .Params.dek }}
+      {{ with $dek }}
       <p class="archive-dek">{{ . }}</p>
       {{ end }}
       <div class="archive-meta">
