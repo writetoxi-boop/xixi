@@ -1,0 +1,49 @@
+{{ define "main" }}
+<main class="container">
+
+  <div class="article-meta">
+    <div class="meta-left">
+      <span class="member-badge"><span class="member-dot"></span>Member archive</span>
+    </div>
+    <div class="meta-right">
+      Vol {{ with .Params.volume }}{{ . }}{{ else }}I{{ end }} · No {{ with .Params.number }}{{ . }}{{ else }}01{{ end }} · {{ .Date.Format "02.01.2006" }}
+    </div>
+  </div>
+
+  {{ with .Params.kicker }}
+  <div class="article-kicker">{{ . }}</div>
+  {{ end }}
+
+  <h1 class="article-headline">{{ .Title }}</h1>
+
+  {{ with .Params.dek }}
+  <p class="article-dek">{{ . }}</p>
+  {{ end }}
+
+  <div class="article-byline">
+    <span class="byline-label">Filed by</span>
+    <span class="byline-name">{{ with .Params.byline }}{{ . }}{{ else }}XIXI Intelligence{{ end }}</span>
+    {{ with .Params.readtime }}
+    <div class="byline-divider"></div>
+    <span class="byline-label">{{ . }}</span>
+    {{ end }}
+  </div>
+
+  <article class="article-body">
+    {{ .Content }}
+  </article>
+
+  <div class="article-footer">
+    <div class="footer-tag">
+      Filed under: {{ with .Params.kicker }}{{ . }}{{ else }}Intelligence{{ end }}
+    </div>
+    {{ with .NextInSection }}
+    <a href="{{ .RelPermalink }}" class="next-article">
+      Next dispatch →
+      <span>{{ .Title }}</span>
+    </a>
+    {{ end }}
+  </div>
+
+</main>
+{{ end }}

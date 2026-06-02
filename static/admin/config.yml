@@ -2,10 +2,12 @@ backend:
   name: git-gateway
   branch: main
 
-publish_mode: editorial_workflow
+media_folder: "static/images/articles"
+public_folder: "/images/articles"
 
-media_folder: "static/uploads"
-public_folder: "/uploads"
+site_url: https://www.xixithemagazine.com
+display_url: https://www.xixithemagazine.com
+logo_url: https://www.xixithemagazine.com/favicon.ico
 
 collections:
   - name: "articles"
@@ -13,22 +15,85 @@ collections:
     label_singular: "Article"
     folder: "content/articles"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "articles/{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{kicker}} ({{year}}-{{month}}-{{day}})"
+    sortable_fields: ["date", "title"]
+    view_filters:
+      - label: "Drafts"
+        field: draft
+        pattern: true
+      - label: "Published"
+        field: draft
+        pattern: false
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - label: "Vertical"
-        name: "categories"
-        widget: "select"
-        options:
-          - { label: "Fashion", value: "fashion" }
-          - { label: "Art", value: "art" }
-          - { label: "Culture", value: "culture" }
-          - { label: "Capital", value: "capital" }
-          - { label: "Power", value: "power" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Read Time (e.g. 9 min)", name: "read_time", widget: "string" }
-      - { label: "Excerpt", name: "excerpt", widget: "text" }
-      - { label: "Featured Image", name: "image", widget: "image", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, required: false }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "The headline. Playfair Display, large."
+
+      - label: "Kicker"
+        name: "kicker"
+        widget: "string"
+        required: false
+        hint: "Category in small caps above headline. E.g. Asian Art Market, Creator Economy, Fashion Capital."
+
+      - label: "Dek"
+        name: "dek"
+        widget: "text"
+        required: false
+        hint: "Italic subtitle below headline. One or two sentences. The argument in 25 words."
+
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        default: ""
+
+      - label: "Volume"
+        name: "volume"
+        widget: "string"
+        default: "I"
+        hint: "Roman numeral. Use I for 2026, II for 2027, etc."
+
+      - label: "Number"
+        name: "number"
+        widget: "string"
+        hint: "Issue number, e.g. 01, 02, 03"
+
+      - label: "Read time"
+        name: "readtime"
+        widget: "string"
+        default: "5 min read"
+        required: false
+
+      - label: "Byline"
+        name: "byline"
+        widget: "string"
+        default: "XIXI Intelligence"
+        required: false
+        hint: "Leave as 'XIXI Intelligence' for editorial articles. Use named byline only for guest pieces."
+
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+        default: true
+        hint: "Drafts are not visible on the public archive. Toggle off to publish."
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        hint: "The article. Markdown supported. Use > for pull quotes, ## for sections, --- for hairline breaks."
+
+  - name: "settings"
+    label: "Settings"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "general"
+        label: "Site settings"
+        file: "data/settings.yml"
+        fields:
+          - {label: "Site title", name: "title", widget: "string", default: "XIXI"}
+          - {label: "Tagline", name: "tagline", widget: "string", default: "A private archive for Asian art, capital, and cultural intelligence."}
+          - {label: "Footer entity", name: "entity", widget: "string", default: "XIXI Media Pte Ltd"}

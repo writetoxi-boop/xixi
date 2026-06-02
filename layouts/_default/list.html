@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+<div class="archive-header">
+  <h1 class="archive-title">{{ if .IsHome }}Archive{{ else }}{{ .Title }}{{ end }}</h1>
+  <p class="archive-sub">
+    {{ with .Params.description }}{{ . }}{{ else }}A private register of dispatches on Asian art, capital, and cultural intelligence.{{ end }}
+  </p>
+</div>
+
+{{ $articles := where .Site.RegularPages "Section" "articles" }}
+
+{{ if $articles }}
+<div class="archive-grid">
+  {{ range $articles.ByDate.Reverse }}
+  <div class="archive-item">
+    <a href="{{ .RelPermalink }}">
+      {{ with .Params.kicker }}
+      <div class="archive-kicker">{{ . }}</div>
+      {{ end }}
+      <h2 class="archive-headline">{{ .Title }}</h2>
+      {{ with .Params.dek }}
+      <p class="archive-dek">{{ . }}</p>
+      {{ end }}
+      <div class="archive-meta">
+        Vol {{ with .Params.volume }}{{ . }}{{ else }}I{{ end }} · No {{ with .Params.number }}{{ . }}{{ else }}01{{ end }} · {{ .Date.Format "02.01.2006" }}
+      </div>
+    </a>
+  </div>
+  {{ end }}
+</div>
+{{ else }}
+<div class="archive-empty">
+  <p>The first dispatches are in preparation. Members will be notified.</p>
+</div>
+{{ end }}
+
+{{ end }}
